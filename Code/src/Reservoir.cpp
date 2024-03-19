@@ -1,14 +1,10 @@
-//
-// Created by CTW02617-admin on 3/19/2024.
-//
 
-#include "Reservoir.h"
-
+#include "headers/Reservoir.h"
 using namespace std;
 
-Reservoir::Reservoir(const std::string &id) {}
+Reservoir::Reservoir(const string &id) {}
 
-Reservoir::Reservoir(const std::string& name, const std::string& municipality, int id, const std::string& code, double maxDelivery)
+Reservoir::Reservoir(const string& name, const string& municipality, int id, const string& code, double maxDelivery)
         : name(name), municipality(municipality), id(id), code(code), maxDelivery(maxDelivery) {}
 
 string Reservoir::getName() const {

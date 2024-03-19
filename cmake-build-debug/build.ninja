@@ -91,6 +91,27 @@ build CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Reservoir.cpp.obj: CXX_COMPILE
   OBJECT_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir
   OBJECT_FILE_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src
 
+build CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Station.cpp.obj: CXX_COMPILER__DA2024_PRJ1_G_04_6__unscanned_Debug C$:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code/src/Station.cpp || cmake_object_order_depends_target_DA2024_PRJ1_G_04_6_
+  DEP_FILE = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src\Station.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code
+  OBJECT_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir
+  OBJECT_FILE_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src
+
+build CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/City.cpp.obj: CXX_COMPILER__DA2024_PRJ1_G_04_6__unscanned_Debug C$:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code/src/City.cpp || cmake_object_order_depends_target_DA2024_PRJ1_G_04_6_
+  DEP_FILE = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src\City.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code
+  OBJECT_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir
+  OBJECT_FILE_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src
+
+build CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Pipe.cpp.obj: CXX_COMPILER__DA2024_PRJ1_G_04_6__unscanned_Debug C$:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code/src/Pipe.cpp || cmake_object_order_depends_target_DA2024_PRJ1_G_04_6_
+  DEP_FILE = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src\Pipe.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/CTW02617-admin/Desktop/DA-project1/DA2024_PRJ1_G-04_6-/Code
+  OBJECT_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir
+  OBJECT_FILE_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir\Code\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DA2024_PRJ1_G_04_6_
@@ -99,7 +120,7 @@ build CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Reservoir.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable DA2024_PRJ1_G_04_6_.exe
 
-build DA2024_PRJ1_G_04_6_.exe: CXX_EXECUTABLE_LINKER__DA2024_PRJ1_G_04_6__Debug CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Menu.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/DataReader.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/WaterSystem.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Reservoir.cpp.obj
+build DA2024_PRJ1_G_04_6_.exe: CXX_EXECUTABLE_LINKER__DA2024_PRJ1_G_04_6__Debug CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Menu.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/DataReader.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/WaterSystem.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Reservoir.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Station.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/City.cpp.obj CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Pipe.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DA2024_PRJ1_G_04_6_.dir

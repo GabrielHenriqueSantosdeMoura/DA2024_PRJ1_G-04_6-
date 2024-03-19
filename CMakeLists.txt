@@ -17,4 +17,10 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/src/WaterSystem.cpp
         Code/headers/WaterSystem.h
         Code/src/Reservoir.cpp
-        Code/src/Reservoir.h)
+        Code/headers/Reservoir.h
+        Code/src/PumpingStation.cpp
+        Code/headers/PumpingStation.h
+        Code/src/City.cpp
+        Code/headers/City.h
+        Code/src/Pipe.cpp
+        Code/src/Pipe.h)

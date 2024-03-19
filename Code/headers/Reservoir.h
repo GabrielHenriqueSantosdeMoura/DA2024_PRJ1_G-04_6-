@@ -1,10 +1,6 @@
-//
-// Created by CTW02617-admin on 3/19/2024.
-//
 
 #ifndef DA2024_PRJ1_G_04_6__RESERVOIR_H
 #define DA2024_PRJ1_G_04_6__RESERVOIR_H
-
 #include <string>
 using namespace std;
 
@@ -26,7 +22,7 @@ public:
     //constructors
     Reservoir(const string &id);
 
-    Reservoir(const std::string& name, const std::string& municipality, int id, const std::string& code, double maxDelivery);
+    Reservoir(const string& name, const string& municipality, int id, const string& code, double maxDelivery);
 
     //getters
     string getName() const;
@@ -44,4 +40,4 @@ public:
 };
 
 
-#endif //DA2024_PRJ1_G_04_6__RESERVOIR_H
+#endif DA2024_PRJ1_G_04_6__RESERVOIR_H
