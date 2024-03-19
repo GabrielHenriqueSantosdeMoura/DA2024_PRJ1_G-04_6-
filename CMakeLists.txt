@@ -23,4 +23,4 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/src/City.cpp
         Code/headers/City.h
         Code/src/Pipe.cpp
-        Code/src/Pipe.h)
+        Code/headers/Pipe.h)

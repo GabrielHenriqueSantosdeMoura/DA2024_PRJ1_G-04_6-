@@ -1,5 +1,5 @@
 
-#include "Pipe.h"
+#include "headers/Pipe.h"
 using namespace std;
 
 Pipe::Pipe(const string& sourceService, const string& targetService, double capacity, bool direction)
