@@ -1,7 +1,3 @@
-//
-// Created by CTW02617-admin on 3/19/2024.
-//
-
 
 #ifndef DA2024_PRJ1_G_04_6__CITY_H
 #define DA2024_PRJ1_G_04_6__CITY_H
@@ -18,15 +14,11 @@ private:
 
     double demand;
 
-    int population;
+    basic_string<char> population;
 
 public:
 
-    // constructors
-    City(int id);
-
-    City(int id, const string& name, const string& code, double demand, int population);
-
+    City(const string& name, int id, const string& code, double demand, const string& population);
     // getters
     string getName() const;
 

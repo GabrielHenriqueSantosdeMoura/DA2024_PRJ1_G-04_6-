@@ -21,6 +21,7 @@ private:
 public:
 
     // Constructor
+    WaterSystem(){}
     WaterSystem(const vector<Reservoir>& reservoirs,const vector<PumpingStation>& pumpingStations,const vector<City>& cities,const vector<Pipe>& pipes);
 
     // Getters
@@ -31,6 +32,15 @@ public:
     vector<City> getCities() const;
 
     vector<Pipe> getPipes() const;
+
+    void addCity(const City& city);
+
+    void addReservoir(const Reservoir& reservoir);
+
+    void addPumpingStation(const PumpingStation& pumpingStation);
+
+    void addPipe(const Pipe& pipe);
+
 };
 
 
