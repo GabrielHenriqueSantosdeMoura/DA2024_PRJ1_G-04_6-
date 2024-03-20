@@ -1,7 +1,3 @@
-//
-// Created by Gabriel on 19/03/2024.
-//
-
 #ifndef DA2024_PRJ1_G_04_6_GRAPH_H
 #define DA2024_PRJ1_G_04_6_GRAPH_H
 
@@ -36,7 +32,6 @@ class Vertex {
     int num;               // auxiliary field
     int low;               // auxiliary field
 
-    void addEdge(Vertex<T> *dest, double w);
     bool removeEdgeTo(Vertex<T> *d);
 public:
     Vertex(T in);
@@ -62,6 +57,8 @@ public:
     void setLow(int low);
 
     friend class Graph<T>;
+
+    void addEdge(Vertex<T> *dest, double w);
 };
 
 template <class T>
@@ -90,7 +87,7 @@ class Graph {
 public:
     Vertex<T> *findVertex(const T &in) const;
     int getNumVertex() const;
-    bool addVertex(const T &in);
+    Vertex<City> * addVertex(const T &in);
     bool removeVertex(const T &in);
     bool addEdge(const T &sourc, const T &dest, double w);
     bool removeEdge(const T &sourc, const T &dest);
@@ -167,7 +164,7 @@ void Edge<T>::setWeight(double weight) {
 template <class T>
 Vertex<T> * Graph<T>::findVertex(const T &in) const {
     for (auto v : vertexSet)
-        if (v->info == in)
+        if (static_cast<const City>(static_cast<const City>(v->info)) == in)
             return v;
     return NULL;
 }
@@ -228,7 +225,7 @@ void Vertex<T>::setAdj(const vector<Edge<T>> &adj) {
  *  Returns true if successful, and false if a vertex with that content already exists.
  */
 template <class T>
-bool Graph<T>::addVertex(const T &in) {
+Vertex<City> * Graph<T>::addVertex(const T &in) {
     if ( findVertex(in) != NULL)
         return false;
     vertexSet.push_back(new Vertex<T>(in));

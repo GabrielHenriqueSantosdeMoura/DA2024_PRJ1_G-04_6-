@@ -2,7 +2,7 @@
 #include "headers/Pipe.h"
 using namespace std;
 
-Pipe::Pipe(const string& sourceService, const string& targetService, double capacity, bool direction)
+Pipe::Pipe(const string& sourceService, const string& targetService, double capacity, string direction)
         : sourceService(sourceService), targetService(targetService), capacity(capacity), direction(direction) {}
 
 
@@ -18,10 +18,6 @@ double Pipe::getCapacity() const {
     return capacity;
 }
 
-bool Pipe::isUnidirectinal()  const {
-    return direction;
-}
-
-bool Pipe::isBidirectinal()  const {
+string Pipe::getDirection()const {
     return direction;
 }

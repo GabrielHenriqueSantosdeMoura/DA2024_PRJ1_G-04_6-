@@ -13,11 +13,11 @@ private:
 
     double capacity;
 
-    bool direction;
+    string direction;
 
 public:
     // Constructors
-    Pipe(const string& sourceService, const string& targetService, double capacity, bool direction);
+    Pipe(const string& sourceService, const string& targetService, double capacity, string direction);
 
     // Getters
     string getSourceService() const;
@@ -26,9 +26,9 @@ public:
 
     double getCapacity() const;
 
-    bool isUnidirectinal() const;
+    string getDirection() const;
 
-    bool isBidirectinal() const;
+
 
 };
 

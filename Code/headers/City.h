@@ -30,6 +30,11 @@ public:
 
     int getPopulation() const;
 
+    bool operator==(const City& other) const {
+        // Define your comparison logic here
+        return (this->name == other.name && this->id == other.id && this->code == other.code
+        && this->demand == other.demand && this->population == other.population);
+    }
     //setters
 };
 
