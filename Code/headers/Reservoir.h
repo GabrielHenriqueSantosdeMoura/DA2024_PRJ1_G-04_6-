@@ -2,9 +2,12 @@
 #ifndef DA2024_PRJ1_G_04_6__RESERVOIR_H
 #define DA2024_PRJ1_G_04_6__RESERVOIR_H
 #include <string>
+#include <iostream>
+
+
 using namespace std;
 
-class Reservoir {
+class Reservoir{
 
 private:
     string name;
@@ -20,7 +23,7 @@ private:
 public:
 
     //constructors
-    Reservoir(const string &id);
+    Reservoir() = default;
 
     Reservoir(const string& name, const string& municipality, int id, const string& code, double maxDelivery);
 
@@ -36,6 +39,9 @@ public:
     double getMaxDelivery() const;
 
     //setters
+    void print() const{
+        cout<<"reservoir municipality: "<<getCode()<<'\n';
+    }
 
 };
 

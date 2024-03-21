@@ -2,7 +2,7 @@
 #include "headers/City.h"
 using namespace std;
 
-City::City(const string& name,int id,  const string& code, double demand, const string& population)
+City::City(const string& name,int id,  const string& code, double demand, const string & population)
         : name(name), id(id), code(code), demand(demand), population(population) {}
 
 string City::getName() const {
@@ -21,6 +21,6 @@ double City::getDemand() const {
     return demand;
 }
 
-int City::getPopulation() const {
+string City::getPopulation() const {
     return population;
 }

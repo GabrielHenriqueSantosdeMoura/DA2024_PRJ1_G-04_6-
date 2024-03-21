@@ -9,12 +9,19 @@ private:
     WaterSystem<T> waterSystem;
 
 public:
-    void addVerticesFromVector(const vector<T>& vertices) {
+
+    void addPumpingStationFromVector(const vector<PumpingStation>& vertices) {
         for (const T& vertex : vertices) {
             waterSystem.addVertex(vertex);
         }
     }
-    void addEdgeFromVector(const vector<T>& edges){
+    void addReservoirsFromVector(const vector<Reservoir>& vertices) {
+        for (const T& vertex : vertices) {
+            waterSystem.addVertex(vertex);
+        }
+    }
+
+    void addEdgeFromVector(const vector<Pipe>& edges){
         for (const T& edge : edges){
             waterSystem.addEdge(edge);
         }

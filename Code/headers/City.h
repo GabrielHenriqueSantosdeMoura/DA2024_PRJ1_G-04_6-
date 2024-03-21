@@ -2,9 +2,12 @@
 #ifndef DA2024_PRJ1_G_04_6__CITY_H
 #define DA2024_PRJ1_G_04_6__CITY_H
 #include <string>
+#include <iostream>
+
+
 using namespace std;
 
-class City {
+class City{
 private:
     string name;
 
@@ -14,9 +17,10 @@ private:
 
     double demand;
 
-    basic_string<char> population;
+    string population;
 
 public:
+    City() = default;
 
     City(const string& name, int id, const string& code, double demand, const string& population);
     // getters
@@ -28,12 +32,10 @@ public:
 
     double getDemand() const;
 
-    int getPopulation() const;
+    string getPopulation() const;
 
-    bool operator==(const City& other) const {
-        // Define your comparison logic here
-        return (this->name == other.name && this->id == other.id && this->code == other.code
-        && this->demand == other.demand && this->population == other.population);
+    void print() const{
+        cout<<"city name : "<<getCode()<<'\n';
     }
     //setters
 };

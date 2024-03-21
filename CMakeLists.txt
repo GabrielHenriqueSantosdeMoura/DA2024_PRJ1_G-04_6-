@@ -14,7 +14,6 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/src/Script.cpp
         Code/headers/Script.h
         Code/src/main.cpp
-        Code/src/WaterSystem.cpp
         Code/headers/WaterSystem.h
         Code/src/Reservoir.cpp
         Code/headers/Reservoir.h
@@ -25,6 +24,6 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/src/Pipe.cpp
         Code/headers/Pipe.h
         Code/src/GraphFactory.cpp
-        Code/headers/GraphFactory.cpp
         Code/headers/GraphFactory.h
+        Code/headers/WaterInfrastructure.h
 )

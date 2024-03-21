@@ -2,9 +2,12 @@
 #ifndef DA2024_PRJ1_G_04_6__PIPE_H
 #define DA2024_PRJ1_G_04_6__PIPE_H
 #include <string>
+#include <iostream>
+
+
 using namespace std;
 
-class Pipe {
+class Pipe{
 
 private:
     string sourceService;
@@ -13,11 +16,11 @@ private:
 
     double capacity;
 
-    string direction;
 
 public:
     // Constructors
-    Pipe(const string& sourceService, const string& targetService, double capacity, string direction);
+    Pipe(const string& sourceService, const string& targetService, double capacity);
+    Pipe() = default;
 
     // Getters
     string getSourceService() const;
@@ -28,6 +31,9 @@ public:
 
     string getDirection() const;
 
+    void print() const{
+        cout<<"pipe: "<<getCapacity()<<'\n';
+    }
 
 
 };

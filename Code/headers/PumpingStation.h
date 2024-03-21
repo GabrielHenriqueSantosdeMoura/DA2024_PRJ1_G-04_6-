@@ -2,20 +2,23 @@
 #ifndef DA2024_PRJ1_G_04_6__PUMPINGSTATION_H
 #define DA2024_PRJ1_G_04_6__PUMPINGSTATION_H
 #include <string>
+#include "Pipe.h"
+
+
 using namespace std;
 
-class PumpingStation {
+class PumpingStation  {
 private:
 
-    int id;
+    int id = 0;
 
     string code;
 
 public:
     // constructors
-    PumpingStation(int id);
 
-    PumpingStation(int id, const string& code);
+    PumpingStation(int id, const string &code);
+    PumpingStation() = default;
 
     // getters
     int getId() const;
@@ -23,6 +26,9 @@ public:
     string getCode() const;
 
     //setters
+    void print() const{
+        cout<<"station id: "<<getCode()<<'\n';
+    }
 
 };
 

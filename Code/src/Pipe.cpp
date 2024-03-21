@@ -2,8 +2,8 @@
 #include "headers/Pipe.h"
 using namespace std;
 
-Pipe::Pipe(const string& sourceService, const string& targetService, double capacity, string direction)
-        : sourceService(sourceService), targetService(targetService), capacity(capacity), direction(direction) {}
+Pipe::Pipe(const string& sourceService, const string& targetService, double capacity)
+        : sourceService(sourceService), targetService(targetService), capacity(capacity){}
 
 
 string Pipe::getSourceService() const {
@@ -18,6 +18,3 @@ double Pipe::getCapacity() const {
     return capacity;
 }
 
-string Pipe::getDirection()const {
-    return direction;
-}

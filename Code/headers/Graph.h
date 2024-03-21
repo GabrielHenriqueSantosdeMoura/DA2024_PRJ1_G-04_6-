@@ -1,9 +1,3 @@
-#ifndef DA2024_PRJ1_G_04_6_GRAPH_H
-#define DA2024_PRJ1_G_04_6_GRAPH_H
-
-/*
- * Graph.h
- */
 #ifndef GRAPH_H_
 #define GRAPH_H_
 
@@ -86,8 +80,8 @@ class Graph {
     bool dfsIsDAG(Vertex<T> *v) const;
 public:
     Vertex<T> *findVertex(const T &in) const;
+    bool addVertex(const T &in);
     int getNumVertex() const;
-    Vertex<City> * addVertex(const T &in);
     bool removeVertex(const T &in);
     bool addEdge(const T &sourc, const T &dest, double w);
     bool removeEdge(const T &sourc, const T &dest);
@@ -164,7 +158,7 @@ void Edge<T>::setWeight(double weight) {
 template <class T>
 Vertex<T> * Graph<T>::findVertex(const T &in) const {
     for (auto v : vertexSet)
-        if (static_cast<const City>(static_cast<const City>(v->info)) == in)
+        if (v->info == in)
             return v;
     return NULL;
 }
@@ -223,15 +217,8 @@ void Vertex<T>::setAdj(const vector<Edge<T>> &adj) {
 /*
  *  Adds a vertex with a given content or info (in) to a graph (this).
  *  Returns true if successful, and false if a vertex with that content already exists.
+ *
  */
-template <class T>
-Vertex<City> * Graph<T>::addVertex(const T &in) {
-    if ( findVertex(in) != NULL)
-        return false;
-    vertexSet.push_back(new Vertex<T>(in));
-    return true;
-}
-
 
 /*
  * Adds an edge to a graph (this), given the contents of the source and
@@ -257,6 +244,13 @@ void Vertex<T>::addEdge(Vertex<T> *d, double w) {
     adj.push_back(Edge<T>(d, w));
 }
 
+template <class T>
+bool Graph<T>::addVertex(const T &in) {
+    if ( findVertex(in) != NULL)
+        return false;
+    vertexSet.push_back(new Vertex<T>(in));
+    return true;
+}
 
 /*
  * Removes an edge from a graph (this).
