@@ -6,7 +6,6 @@
 
 
 using namespace std;
-
 class City{
 private:
     string name;
@@ -34,6 +33,7 @@ public:
 
     string getPopulation() const;
 
+    //method for checking the data, could be deleted
     void print() const{
         cout<<"city name : "<<getCode()<<'\n';
     }

@@ -23,7 +23,5 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/headers/City.h
         Code/src/Pipe.cpp
         Code/headers/Pipe.h
-        Code/src/GraphFactory.cpp
-        Code/headers/GraphFactory.h
         Code/headers/WaterInfrastructure.h
 )

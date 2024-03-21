@@ -7,23 +7,24 @@
 #include "Pipe.h"
 #include "Graph.h"
 #include "WaterInfrastructure.h"
-
 using namespace std;
 
+
+//class constructs a graph
 template<class T>
 class WaterSystem {
 private:
     Graph<T> supplySystem;
 public:
 
-    bool addVertex(const T& info) {
-           return supplySystem.addVertex(info);
-    }
+    //add vertexes to the graph
     void addVertexFromVector(const vector<T>& vertices) {
         for (const T& vertex : vertices) {
-            this->addVertex(vertex);
+            supplySystem.addVertex(vertex);
         }
     }
+
+    //add edges to the graph
     void addEdgeFromVector(const vector<T>& edges){
         for (const T& edge : edges){
             if (!this->addEdge(edge)){
@@ -33,10 +34,13 @@ public:
         }
     }
 
+
     bool addEdge(const T& waterinfrastructure) {
         auto sourceCode = waterinfrastructure.pipe.getSourceService();
         auto targetCode = waterinfrastructure.pipe.getTargetService();
+
         auto weight = waterinfrastructure.pipe.getCapacity();
+
         Vertex <T > * source = this->getVertexByCode(sourceCode);
         Vertex <T > * target = this->getVertexByCode(targetCode);
         return supplySystem.addEdge(source->getInfo(),target->getInfo(),weight);
@@ -67,6 +71,9 @@ public:
         }
         throw runtime_error("Error");
     }
+
+
+    //the method to print the data to check if the graph created properly, could be deleted
     void print (){
         for (const auto & vertex: supplySystem.getVertexSet() ){
             vertex->getInfo().print();

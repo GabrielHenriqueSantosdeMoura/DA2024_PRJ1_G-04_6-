@@ -31,6 +31,7 @@ public:
 
     string getDirection() const;
 
+    //method for checking the data, could be deleted
     void print() const{
         cout<<"pipe: "<<getCapacity()<<'\n';
     }

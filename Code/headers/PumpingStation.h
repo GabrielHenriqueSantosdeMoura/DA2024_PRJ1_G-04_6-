@@ -25,7 +25,7 @@ public:
 
     string getCode() const;
 
-    //setters
+    //method for checking the data, could be deleted
     void print() const{
         cout<<"station id: "<<getCode()<<'\n';
     }

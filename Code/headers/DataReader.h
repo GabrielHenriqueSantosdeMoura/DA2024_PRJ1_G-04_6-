@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//I created a namespace that holds the functions needed to read the data from csv files, could be places to the Script.cpp
 namespace DataReader{
     vector <WaterInfrastructure> readCities (const string &path);
     vector <WaterInfrastructure> readPumpingStations (const string &path);

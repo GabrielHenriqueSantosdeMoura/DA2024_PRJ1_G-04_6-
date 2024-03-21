@@ -38,7 +38,7 @@ public:
 
     double getMaxDelivery() const;
 
-    //setters
+    //method for checking the data, could be deleted
     void print() const{
         cout<<"reservoir municipality: "<<getCode()<<'\n';
     }
