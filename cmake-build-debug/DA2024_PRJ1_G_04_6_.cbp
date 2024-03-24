@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DA2024_PRJ1_G_04_6_"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DA2024_PRJ1_G_04_6_">
+				<Option output="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/DA2024_PRJ1_G_04_6_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA2024_PRJ1_G_04_6_"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DA2024_PRJ1_G_04_6_/fast">
+				<Option output="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/DA2024_PRJ1_G_04_6_" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 DA2024_PRJ1_G_04_6_/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/City.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/DataReader.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Graph.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Menu.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Pipe.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/PumpingStation.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Reservoir.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Script.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/WaterInfrastructure.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/WaterSystem.h">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/City.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/DataReader.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/Menu.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/Pipe.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/PumpingStation.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/Reservoir.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/Script.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/src/main.cpp">
+			<Option target="DA2024_PRJ1_G_04_6_"/>
+		</Unit>
+		<Unit filename="/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

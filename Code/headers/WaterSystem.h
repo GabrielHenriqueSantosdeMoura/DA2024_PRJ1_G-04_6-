@@ -15,77 +15,64 @@ template<class T>
 class WaterSystem {
 private:
     Graph<T> supplySystem;
-public:
 
-    //add vertexes to the graph
+public:
     void addVertexFromVector(const vector<T>& vertices) {
         for (const T& vertex : vertices) {
             supplySystem.addVertex(vertex);
         }
     }
 
-    //add edges to the graph
-    void addEdgeFromVector(const vector<T>& edges){
-        for (const T& edge : edges){
-            if (!this->addEdge(edge)){
-                cout<<"Some error occurred while adding edge";
+    void addEdgeFromVector(const vector<T>& edges) {
+        for (const T& edge : edges) {
+            if (!this->addEdge(edge)) {
+                cout << "Some error occurred while adding edge";
             }
-
         }
     }
-
 
     bool addEdge(const T& waterinfrastructure) {
         auto sourceCode = waterinfrastructure.pipe.getSourceService();
         auto targetCode = waterinfrastructure.pipe.getTargetService();
-
         auto weight = waterinfrastructure.pipe.getCapacity();
 
-        Vertex <T > * source = this->getVertexByCode(sourceCode);
-        Vertex <T > * target = this->getVertexByCode(targetCode);
-        return supplySystem.addEdge(source->getInfo(),target->getInfo(),weight);
+        Vertex<T>* source = this->getVertexByCode(sourceCode);
+        Vertex<T>* target = this->getVertexByCode(targetCode);
+
+        if (source != nullptr && target != nullptr) {
+            return supplySystem.addEdge(source->getInfo(), target->getInfo(), weight);
+        }
+
+        return false;
     }
 
-
-    Vertex<T> * getVertexByCode(string& code){
-        auto set = supplySystem.getVertexSet();
-        for ( auto vertex : set){
-            WaterInfrastructure w = vertex->getInfo();
-            string vertexCode ;
-            switch (w.type) {
-                case CITY:
-                    vertexCode = w.city.getCode();
-                    break;
-                case PUMPINGSTATION:
-                    vertexCode = w.pumpingStation.getCode();
-                    break;
-                case RESERVOIR:
-                    vertexCode = w.reservoir.getCode();
-                    break;
-                default:
-                    throw runtime_error("Error");
-            }
-            if (vertexCode == code){
+    Vertex<T>* getVertexByCode(const string& code) {
+        auto vertices = supplySystem.getVertexSet();
+        for (auto vertex : vertices) {
+            if (vertex->getInfo().getCode() == code) {
                 return vertex;
             }
         }
-        throw runtime_error("Error");
+        return nullptr;
     }
 
+    void printGraph() {
+        cout << "Vertices in the graph:" << endl;
+        for (auto vertex : supplySystem.getVertexSet()) {
+            cout << vertex->getInfo().getCode() << endl;
+        }
 
-    //the method to print the data to check if the graph created properly, could be deleted
-    void print (){
-        for (const auto & vertex: supplySystem.getVertexSet() ){
-            vertex->getInfo().print();
-            cout<<"Edges number: "<<vertex->getAdj().size()<<'\n';
-
+        cout << "Edges in the graph:" << endl;
+        for (auto vertex : supplySystem.getVertexSet()) {
+            for (auto edge : vertex->getAdj()) {
+                cout << vertex->getInfo().getCode() << " -> " << edge->getDest()->getInfo().getCode() << endl;
+            }
         }
     }
-
-
-
-
 };
+
+
+
 
 
 #endif //DA2024_PRJ1_G_04_6__WATERSYSTEM_H

@@ -88,6 +88,22 @@ public:
         }
     }
 
+    string getCode() const {
+        switch (type) {
+            case CITY:
+                return city.getCode();
+            case PUMPINGSTATION:
+                return pumpingStation.getCode();
+            case RESERVOIR:
+                return reservoir.getCode();
+            case PIPE:
+                // Depending on your implementation, you might want to return a combination of source and target codes for pipes
+                return pipe.getSourceService() + "_" + pipe.getTargetService();
+            default:
+                throw runtime_error("Invalid infrastructure type");
+        }
+    }
+
 };
 #endif //DA2024_PRJ1_G_04_6__WATERINFRASTRUCTURE_H
 
