@@ -14,6 +14,7 @@ vector<WaterInfrastructure> DataReader::readCities(const string &path) {
     ifstream citiesMadeira_file(path);
 
     //check if the file exists
+
     if (!citiesMadeira_file.is_open()){
         throw runtime_error("Cities Madeira file does not exist");
     }

@@ -1,14 +1,28 @@
-//
-// Created by Gabriel on 19/03/2024.
-//
-
 #ifndef DA2024_PRJ1_G_04_6_MENU_H
 #define DA2024_PRJ1_G_04_6_MENU_H
 
+#include "WaterSystem.h"
+#include "Script.h"
+#include <iomanip>
 
 class Menu {
-    //will be implemented
-};
+    Script script;
+public:
+    void clearScreen();
 
+    void mainMenu();
+
+    void maximumSupply();
+
+    void systemAdequacy();
+
+    void systemRealiability();
+
+    void pipelineFailure();
+
+    void removedReservoir();
+
+    void removedStation();
+};
 
 #endif //DA2024_PRJ1_G_04_6_MENU_H

@@ -11,8 +11,6 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/headers/Menu.h
         Code/src/DataReader.cpp
         Code/headers/DataReader.h
-        Code/src/Script.cpp
-        Code/headers/Script.h
         Code/src/main.cpp
         Code/headers/WaterSystem.h
         Code/src/Reservoir.cpp
@@ -24,4 +22,6 @@ add_executable(DA2024_PRJ1_G_04_6_
         Code/src/Pipe.cpp
         Code/headers/Pipe.h
         Code/headers/WaterInfrastructure.h
+        Code/src/Script.cpp
+        Code/headers/Script.h
 )
