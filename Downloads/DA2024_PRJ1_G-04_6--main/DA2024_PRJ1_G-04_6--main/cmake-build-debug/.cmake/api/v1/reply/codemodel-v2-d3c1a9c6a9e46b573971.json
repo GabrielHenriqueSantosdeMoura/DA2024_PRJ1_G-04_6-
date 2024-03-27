@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "DA2024_PRJ1_G_04_6_",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DA2024_PRJ1_G_04_6_::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DA2024_PRJ1_G_04_6_-Debug-a3e6f0c0ed9dc0d69581.json",
+					"name" : "DA2024_PRJ1_G_04_6_",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Gabriel/Downloads/DA2024_PRJ1_G-04_6--main/DA2024_PRJ1_G-04_6--main/cmake-build-debug",
+		"source" : "C:/Users/Gabriel/Downloads/DA2024_PRJ1_G-04_6--main/DA2024_PRJ1_G-04_6--main"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

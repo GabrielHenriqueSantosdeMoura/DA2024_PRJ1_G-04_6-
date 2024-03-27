@@ -1,0 +1,3 @@
+C:/Users/Gabriel/Downloads/DA2024_PRJ1_G-04_6--main/DA2024_PRJ1_G-04_6--main/cmake-build-debug/CMakeFiles/DA2024_PRJ1_G_04_6_.dir
+C:/Users/Gabriel/Downloads/DA2024_PRJ1_G-04_6--main/DA2024_PRJ1_G-04_6--main/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Gabriel/Downloads/DA2024_PRJ1_G-04_6--main/DA2024_PRJ1_G-04_6--main/cmake-build-debug/CMakeFiles/rebuild_cache.dir
