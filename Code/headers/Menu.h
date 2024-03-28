@@ -13,6 +13,8 @@ public:
 
     void mainMenu();
 
+    void goBackMenu();
+
     void maximumSupply();
 
     void systemAdequacy();

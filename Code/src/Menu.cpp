@@ -40,16 +40,18 @@ void Menu::mainMenu() {
          << endl
          << "2. Water Supply Adequacy"
          << endl
-         << "3. Check reliability of the system"
+         << "3. Metrics before/after balacing the network"
          << endl
-         << "4. Pipeline Failure Analysis "
+         << "4. Check reliability of the system"
          << endl
-         << "5. Exit"
+         << "5. Pipeline Failure Analysis"
+         << endl
+         << "6. Exit"
          << endl
          << "Enter your choice: ";
     cin >> input;
 
-    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5)) {
+    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5 or input == 6)) {
         cout << "Invalid option! please try again:" << endl
              << endl;
         mainMenu();
@@ -60,37 +62,98 @@ void Menu::mainMenu() {
             vector<WaterInfrastructure> infrastructures = getInfrastructure();
             calculateMaxFlow(infrastructures);
             maximumSupply();
+            goBackMenu();
             break;
         }
         case 2:{
             //(T2.2) List the city(code,value) value = deficit of the water,cities that
             //cannot be supplied by the desired water rate level
             systemAdequacy();
+            goBackMenu();
             break;
         }
         case 3:{
-            //(T3)
-            clearScreen();
-            systemRealiability();
+            //(T2.3) Balancing algorithm
+            Graph<string> graph;
+            vector<WaterInfrastructure> infrastructures = getInfrastructure();
+
+            // Add vertices and edges to the graph based on water infrastructure data
+            for (const auto &infrastructure : infrastructures) {
+                switch (infrastructure.type) {
+                    case RESERVOIR:
+                        graph.addVertex(infrastructure.reservoir.getCode());
+                        break;
+                    case CITY:
+                        graph.addVertex(infrastructure.city.getCode());
+                        break;
+                    case PUMPINGSTATION:
+                        graph.addVertex(infrastructure.pumpingStation.getCode());
+                        break;
+                    case PIPE:
+                        graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
+                        // Assuming addEdge function takes source, target, and capacity as parameters
+                        break;
+                    default:
+                        break;
+                }
+            }
+            // Balance the flow across the network
+            balanceFlow(&graph);
+            goBackMenu();
             break;
         }
         case 4:{
-            //(T3.3)
+            //(T3)
             clearScreen();
-            pipelineFailure();
+            systemRealiability();
+            goBackMenu();
             break;
         }
         case 5:{
+            //(T3.3)
+            clearScreen();
+            pipelineFailure();
+            goBackMenu();
+            break;
+        }
+        case 6: {
             exit(EXIT_SUCCESS);
+            break;
         }
         default: {
             cout << "Invalid option! please try again:"
                  << endl;
             mainMenu();
         }
-
     }
 }
+
+void Menu::goBackMenu() {
+    int input;
+    cout << endl
+    << "1. Go back"
+    << endl
+    << "2. Exit"
+    << endl
+    << "Enter your choice: ";
+    cin >> input;
+    if (!(input == 1 | input == 2)){
+        cout << "Invalid option! please try again:" << endl
+             << endl;
+        goBackMenu();
+    }
+    switch (input) {
+        case 1:{
+            mainMenu();
+            break;
+        }
+        case 2:{
+            exit(EXIT_SUCCESS);
+            break;
+        }
+    }
+}
+
 void Menu::maximumSupply() {
     //should the list of the cities be immediately uploaded
     // with enumeration and after user choice run the function

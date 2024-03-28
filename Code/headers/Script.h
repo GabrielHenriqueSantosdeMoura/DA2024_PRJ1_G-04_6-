@@ -28,4 +28,6 @@ double edmondsKarp(Graph<T> *g, T source, T target);
 
 void calculateMaxFlow(const vector<WaterInfrastructure>& infrastructures);
 
+void balanceFlow(Graph<string> *g);
+
 #endif // SCRIPT_H

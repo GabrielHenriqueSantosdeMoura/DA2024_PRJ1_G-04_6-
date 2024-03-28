@@ -144,3 +144,65 @@ void calculateMaxFlow(const vector<WaterInfrastructure> &infrastructures) {
     cout << "Total maximum flow across all cities: " << totalMaxFlow << " m3/sec" << endl;
 }
 
+void balanceFlow(Graph<string> *g) {
+
+    // This shows the difference of some metrics before/after a balancing
+
+    double totalDiff = 0.0;
+    double maxDiff = 0.0;
+    int pipeCount = 0;
+
+    for (auto v : g->getVertexSet()) {
+        for (auto e : v->getAdj()) {
+            double capacity = e->getWeight();
+            double flow = e->getFlow();
+            double diff = capacity - flow;
+            totalDiff += diff;
+            maxDiff = max(maxDiff, diff);
+            pipeCount++;
+        }
+    }
+
+    double avgDiff = totalDiff / pipeCount;
+
+    for (auto v : g->getVertexSet()) {
+        for (auto e : v->getAdj()) {
+            double capacity = e->getWeight();
+            double flow = e->getFlow();
+            double diff = capacity - flow;
+
+            if (diff > avgDiff) {
+                // Reduce excess flow
+                e->setFlow(capacity);
+            } else if (diff < -avgDiff) {
+                // Increase flow to meet capacity
+                e->setFlow(capacity);
+            }
+        }
+    }
+
+    double totalDiffAfter = 0.0;
+    double maxDiffAfter = 0.0;
+
+    for (auto v : g->getVertexSet()) {
+        for (auto e : v->getAdj()) {
+            double capacity = e->getWeight();
+            double flow = e->getFlow();
+            double diff = capacity - flow;
+            totalDiffAfter += diff;
+            maxDiffAfter = max(maxDiffAfter, diff);
+        }
+    }
+
+    double avgDiffAfter = totalDiffAfter / pipeCount;
+
+    cout << endl << " Initial Metrics:" << endl;
+    cout << "Average difference: " << avgDiff << endl;
+    cout << "Variance of differences: " << (totalDiff * totalDiff) / pipeCount << endl;
+    cout << "Maximum difference: " << maxDiff << endl;
+
+    cout << endl << " Metrics after balancing:" << endl;
+    cout << "Average difference: " << avgDiffAfter << endl;
+    cout << "Variance of differences: " << (totalDiffAfter * totalDiffAfter) / pipeCount << endl;
+    cout << "Maximum difference: " << maxDiffAfter << endl;
+}
