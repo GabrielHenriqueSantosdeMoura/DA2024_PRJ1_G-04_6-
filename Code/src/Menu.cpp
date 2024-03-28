@@ -3,6 +3,7 @@
 //
 
 #include "headers/Menu.h"
+#include "headers/Script.h"
 
 void Menu::clearScreen() {
 #ifdef _WIN32
@@ -11,6 +12,22 @@ void Menu::clearScreen() {
     system("clear");
 #endif
 }
+
+vector<WaterInfrastructure> Menu::getInfrastructure(){
+    vector<WaterInfrastructure> cities = DataReader::readCities("Docs/Project1LargeDataSet/Cities.csv");
+    vector<WaterInfrastructure> stations = DataReader::readPumpingStations("Docs/Project1LargeDataSet/Stations.csv");
+    vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("Docs/Project1LargeDataSet/Reservoirs.csv");
+    vector<WaterInfrastructure> pipes = DataReader::readPipes("Docs/Project1LargeDataSet/Pipes.csv");
+
+    vector<WaterInfrastructure> infrastructures;
+    infrastructures.insert(infrastructures.end(), cities.begin(), cities.end());
+    infrastructures.insert(infrastructures.end(), stations.begin(), stations.end());
+    infrastructures.insert(infrastructures.end(), reservoirs.begin(), reservoirs.end());
+    infrastructures.insert(infrastructures.end(), pipes.begin(), pipes.end());
+
+    return infrastructures;
+}
+
 void Menu::mainMenu() {
     int input;
     cout << "+---------------+"
@@ -40,8 +57,8 @@ void Menu::mainMenu() {
 
     switch (input) {
         case 1: {
-            //Edmond's Card method here (T2.1)
-            clearScreen();
+            vector<WaterInfrastructure> infrastructures = getInfrastructure();
+            calculateMaxFlow(infrastructures);
             maximumSupply();
             break;
         }
@@ -75,7 +92,6 @@ void Menu::mainMenu() {
     }
 }
 void Menu::maximumSupply() {
-    script.run();
     //should the list of the cities be immediately uploaded
     // with enumeration and after user choice run the function
 

@@ -6,9 +6,10 @@
 #include <iomanip>
 
 class Menu {
-    Script script;
 public:
     void clearScreen();
+
+    vector<WaterInfrastructure> getInfrastructure();
 
     void mainMenu();
 
