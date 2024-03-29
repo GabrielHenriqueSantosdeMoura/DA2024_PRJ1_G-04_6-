@@ -28,15 +28,34 @@ vector<WaterInfrastructure> Menu::getInfrastructure(){
     return infrastructures;
 }
 
+Graph<string> Menu::getGraph(const vector<WaterInfrastructure>& infrastructures){
+    Graph<string> graph;
+    for (const auto &infrastructure : infrastructures) {
+        switch (infrastructure.type) {
+            case RESERVOIR:
+                graph.addVertex(infrastructure.reservoir.getCode());
+                break;
+            case CITY:
+                graph.addVertex(infrastructure.city.getCode());
+                break;
+            case PUMPINGSTATION:
+                graph.addVertex(infrastructure.pumpingStation.getCode());
+                break;
+            case PIPE:
+                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
+                // Assuming addEdge function takes source, target, and capacity as parameters
+                break;
+            default:
+                break;
+        }
+    }
+    return graph;
+}
+
 void Menu::mainMenu() {
     int input;
-    cout << "+---------------+"
-         << endl
-         << "|   MAIN MENU   |"
-         << endl
-         << "+---------------+"
-         << endl
-         << "1. Maximum Water Supply of the Cities"
+    drawBox("MAIN MENU");
+         cout << "1. Maximum Water Supply of the Cities"
          << endl
          << "2. Water Supply Adequacy"
          << endl
@@ -50,6 +69,7 @@ void Menu::mainMenu() {
          << endl
          << "Enter your choice: ";
     cin >> input;
+    cout << endl;
 
     if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5 or input == 6)) {
         cout << "Invalid option! please try again:" << endl
@@ -60,6 +80,7 @@ void Menu::mainMenu() {
     switch (input) {
         case 1: {
             vector<WaterInfrastructure> infrastructures = getInfrastructure();
+            drawBox("MAXIMUM FLOW");
             calculateMaxFlow(infrastructures);
             maximumSupply();
             goBackMenu();
@@ -74,29 +95,8 @@ void Menu::mainMenu() {
         }
         case 3:{
             //(T2.3) Balancing algorithm
-            Graph<string> graph;
             vector<WaterInfrastructure> infrastructures = getInfrastructure();
-
-            // Add vertices and edges to the graph based on water infrastructure data
-            for (const auto &infrastructure : infrastructures) {
-                switch (infrastructure.type) {
-                    case RESERVOIR:
-                        graph.addVertex(infrastructure.reservoir.getCode());
-                        break;
-                    case CITY:
-                        graph.addVertex(infrastructure.city.getCode());
-                        break;
-                    case PUMPINGSTATION:
-                        graph.addVertex(infrastructure.pumpingStation.getCode());
-                        break;
-                    case PIPE:
-                        graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
-                        // Assuming addEdge function takes source, target, and capacity as parameters
-                        break;
-                    default:
-                        break;
-                }
-            }
+            Graph<string> graph = getGraph(infrastructures);
             // Balance the flow across the network
             balanceFlow(&graph);
             goBackMenu();
@@ -161,25 +161,11 @@ void Menu::maximumSupply() {
     //Or have 1. Check the cities list -> output the list -> another Menu void() to run the Edmonds Karp function
     //2. return back to Main Menu
 }
-void Menu::systemAdequacy() {
-    cout<<endl
-        << "+---------------------------+"
-        <<endl
-        << "|   WATER SUPPLY ADEQUACY   |"
-        << endl
-        << "+---------------------------+";
-}
 
 void Menu::systemRealiability() {
     int input;
-
+    drawBox("SYSTEM REABILITY");
     cout<<endl
-        << "+------------------------+"
-        <<endl
-        << "|   SYSTEM RELIABILITY   |"
-        << endl
-        << "+------------------------+"
-        <<endl
         << "1. Water supply after removing reservoir"
         << endl
         << "2. Water supply after removing pumping station"
@@ -213,12 +199,7 @@ void Menu::systemRealiability() {
     }
 }
 void Menu::pipelineFailure() {
-    cout<<endl
-        << "+----------------------+"
-        <<endl
-        << "|   PIPELINE FAILURE   |"
-        << endl
-        << "+----------------------+";
+    drawBox("PIPELINE FAILURE");
 }
 
 void Menu::removedReservoir() {
@@ -233,4 +214,12 @@ void Menu::removedStation() {
         <<"List of the pumping stations:"
         <<endl;
     //the same question as in removedReservoir();
+}
+
+void Menu::drawBox(string text) {
+    int width = text.length() + 4;
+    string horizontalLine(width, '-');
+    cout << "   +" << horizontalLine << "+" << endl;
+    cout << "   |  " << text << "  |" << endl;
+    cout << "   +" << horizontalLine << "+" << endl;
 }

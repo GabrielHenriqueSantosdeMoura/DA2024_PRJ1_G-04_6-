@@ -11,13 +11,15 @@ public:
 
     vector<WaterInfrastructure> getInfrastructure();
 
+    Graph<string> getGraph(const vector<WaterInfrastructure>& infrastructures);
+
     void mainMenu();
 
     void goBackMenu();
 
-    void maximumSupply();
+    void drawBox(string text);
 
-    void systemAdequacy();
+    void maximumSupply();
 
     void systemRealiability();
 

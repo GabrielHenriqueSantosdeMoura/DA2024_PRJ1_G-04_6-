@@ -30,4 +30,6 @@ void calculateMaxFlow(const vector<WaterInfrastructure>& infrastructures);
 
 void balanceFlow(Graph<string> *g);
 
+void systemAdequacy();
+
 #endif // SCRIPT_H

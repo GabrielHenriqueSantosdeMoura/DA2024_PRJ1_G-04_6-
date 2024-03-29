@@ -6,6 +6,7 @@
 #include "headers/WaterInfrastructure.h"
 #include "headers/DataReader.h"
 #include "headers/Script.h"
+#include "headers/Menu.h"
 
 using namespace std;
 
@@ -205,4 +206,28 @@ void balanceFlow(Graph<string> *g) {
     cout << "Average difference: " << avgDiffAfter << endl;
     cout << "Variance of differences: " << (totalDiffAfter * totalDiffAfter) / pipeCount << endl;
     cout << "Maximum difference: " << maxDiffAfter << endl;
+}
+
+void systemAdequacy() {
+    Menu menu;
+    vector<WaterInfrastructure> infrastructures = menu.getInfrastructure();
+    Graph<string> graph = menu.getGraph(infrastructures);
+    menu.drawBox("WATER SUPPLY ADEQUACY");
+    for (const auto &city : infrastructures) {
+        if (city.type == CITY) {
+            double totalFlow = 0.0;
+            for (const auto &reservoir : infrastructures) {
+                if (reservoir.type == RESERVOIR) {
+                    // Calculate flow from reservoir to city
+                    double flow = edmondsKarp(&graph, reservoir.reservoir.getCode(), city.city.getCode());
+                    totalFlow += flow;
+                }
+            }
+            // Check if the total flow is less than city demand
+            if (totalFlow < city.city.getDemand()) {
+                double deficit = city.city.getDemand() - totalFlow;
+                cout << "The city " << city.city.getName() << "(" << city.city.getCode() << ") has a deficit of " << deficit << " in water supply." << endl;
+            }
+        }
+    }
 }
