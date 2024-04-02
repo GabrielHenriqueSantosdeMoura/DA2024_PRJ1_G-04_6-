@@ -23,10 +23,24 @@ public:
         }
     }
 
-    void addEdgeFromVector(const vector<T>& edges) {
-        for (const T& edge : edges) {
-            if (!this->addEdge(edge)) {
-                cout << "Some error occurred while adding edge";
+    void addEdgeFromVector(const vector<WaterInfrastructure>& pipes) {
+        for (const auto& pipe : pipes) {
+            if (pipe.type == PIPE) {
+                if (pipe.pipe.getDirection() == 0) {
+                    // Bidirectional pipe
+                    if (!this->addEdge(pipe.pipe.getSourceService(), pipe.pipe.getTargetService(), pipe.pipe.getCapacity())) {
+                        cout << "Some error occurred while adding edge" << endl;
+                    }
+                    // Add the reverse edge
+                    if (!this->addEdge(pipe.pipe.getTargetService(), pipe.pipe.getSourceService(), pipe.pipe.getCapacity())) {
+                        cout << "Some error occurred while adding reverse edge" << endl;
+                    }
+                } else {
+                    // Unidirectional pipe
+                    if (!this->addEdge(pipe.pipe.getSourceService(), pipe.pipe.getTargetService(), pipe.pipe.getCapacity())) {
+                        cout << "Some error occurred while adding edge" << endl;
+                    }
+                }
             }
         }
     }

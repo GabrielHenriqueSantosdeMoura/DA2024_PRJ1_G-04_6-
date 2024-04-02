@@ -16,10 +16,12 @@ private:
 
     double capacity;
 
+    bool direction;
+
 
 public:
     // Constructors
-    Pipe(const string& sourceService, const string& targetService, double capacity);
+    Pipe(const string& sourceService, const string& targetService, double capacity, bool direction);
     Pipe() = default;
 
     // Getters
@@ -29,7 +31,9 @@ public:
 
     double getCapacity() const;
 
-    string getDirection() const;
+    bool getDirection() const;
+
+    bool isBidirectional() const;
 
     //method for checking the data, could be deleted
     void print() const{

@@ -6,6 +6,7 @@
 #include "headers/WaterInfrastructure.h"
 #include "headers/DataReader.h"
 #include "headers/Script.h"
+#include <unordered_map>
 
 using namespace std;
 
@@ -116,12 +117,19 @@ void calculateMaxFlow(const vector<WaterInfrastructure> &infrastructures) {
     // Add edges to the graph for each pipe connecting the water infrastructures
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == PIPE) {
-            graph.addBidirectionalEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(),
-                                       infrastructure.pipe.getCapacity());
+            if (infrastructure.pipe.isBidirectional()) {
+                // For bidirectional pipes, add edges in both directions
+                graph.addBidirectionalEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(),
+                                           infrastructure.pipe.getCapacity());
+            } else {
+                // For unidirectional pipes, add edge in one direction only
+                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(),
+                              infrastructure.pipe.getCapacity());
+            }
         }
     }
 
-    // Find the maximum flow to each city using the Edmonds-Karp algorithm
+    // Find the maximum flow from each reservoir to all cities using the Edmonds-Karp algorithm
     cout << "Maximum flow to each city:" << endl;
     double totalMaxFlow = 0.0;
     for (const auto &city : infrastructures) {
@@ -129,12 +137,15 @@ void calculateMaxFlow(const vector<WaterInfrastructure> &infrastructures) {
             double maxFlow = 0.0;
             for (const auto &reservoir : infrastructures) {
                 if (reservoir.type == RESERVOIR) {
+                    double maxReservoirFlow = min(reservoir.reservoir.getMaxDelivery(), city.city.getDemand());
                     double flow = edmondsKarp(&graph, reservoir.reservoir.getCode(), city.city.getCode());
-                    if (flow > maxFlow) {
-                        maxFlow = flow;
-                    }
+                    // Adjust the flow by the maximum delivery capacity of the reservoir
+                    double adjustedFlow = min(flow, maxReservoirFlow);
+                    maxFlow += adjustedFlow;
                 }
             }
+            // Ensure that the maximum flow does not exceed the city's demand
+            maxFlow = min(maxFlow, city.city.getDemand());
             cout << "Maximum flow to city " << city.city.getCode() << ": " << maxFlow << " m3/sec" << endl;
             totalMaxFlow += maxFlow;
         }
@@ -143,5 +154,10 @@ void calculateMaxFlow(const vector<WaterInfrastructure> &infrastructures) {
     // Print the total maximum flow across all cities
     cout << "Total maximum flow across all cities: " << totalMaxFlow << " m3/sec" << endl;
 }
+
+
+
+
+
 
 

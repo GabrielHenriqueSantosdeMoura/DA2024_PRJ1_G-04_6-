@@ -931,6 +931,7 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.o: /home/tiago/Desktop/DA
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/array \
   /usr/include/c++/11/backward/binders.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/alloc_traits.h \
@@ -946,12 +947,17 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.o: /home/tiago/Desktop/DA
   /usr/include/c++/11/bits/cxxabi_forced.h \
   /usr/include/c++/11/bits/cxxabi_init_exception.h \
   /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_defines.h \
   /usr/include/c++/11/bits/exception_ptr.h \
   /usr/include/c++/11/bits/functexcept.h \
   /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/hash_bytes.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/ios_base.h \
   /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/locale_classes.h \
@@ -989,6 +995,7 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.o: /home/tiago/Desktop/DA
   /usr/include/c++/11/bits/streambuf_iterator.h \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/uniform_int_dist.h \
+  /usr/include/c++/11/bits/unordered_map.h \
   /usr/include/c++/11/bits/uses_allocator.h \
   /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cctype \
@@ -1003,6 +1010,7 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.o: /home/tiago/Desktop/DA
   /usr/include/c++/11/debug/debug.h \
   /usr/include/c++/11/deque \
   /usr/include/c++/11/exception \
+  /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/ext/alloc_traits.h \
   /usr/include/c++/11/ext/atomicity.h \
   /usr/include/c++/11/ext/new_allocator.h \
@@ -1022,8 +1030,10 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/Script.cpp.o: /home/tiago/Desktop/DA
   /usr/include/c++/11/streambuf \
   /usr/include/c++/11/string \
   /usr/include/c++/11/system_error \
+  /usr/include/c++/11/tuple \
   /usr/include/c++/11/type_traits \
   /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/vector \
   /usr/include/ctype.h \
@@ -1336,11 +1346,15 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.o: /home/tiago/Desktop/DA/p
 
 /usr/include/c++/11/utility:
 
+/usr/include/c++/11/unordered_map:
+
 /usr/include/c++/11/queue:
 
 /usr/include/c++/11/limits:
 
 /usr/include/c++/11/deque:
+
+/usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/c++/11/bits/stl_queue.h:
 
@@ -1348,7 +1362,17 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.o: /home/tiago/Desktop/DA/p
 
 /usr/include/c++/11/bits/stl_algo.h:
 
+/usr/include/c++/11/bits/invoke.h:
+
+/usr/include/c++/11/bits/hashtable_policy.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
 /usr/include/c++/11/bits/algorithmfwd.h:
+
+/usr/include/c++/11/array:
+
+/usr/include/c++/11/bits/erase_if.h:
 
 /home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Script.h:
 
@@ -1377,6 +1401,8 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.o: /home/tiago/Desktop/DA/p
 /home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/Pipe.h:
 
 /home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Code/headers/DataReader.h:
+
+/usr/include/c++/11/bits/hashtable.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 
@@ -1505,6 +1531,8 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.o: /home/tiago/Desktop/DA/p
 /usr/include/endian.h:
 
 /usr/include/c++/11/bits/char_traits.h:
+
+/usr/include/c++/11/tuple:
 
 /usr/include/c++/11/ostream:
 
@@ -1659,6 +1687,8 @@ CMakeFiles/DA2024_PRJ1_G_04_6_.dir/Code/src/main.cpp.o: /home/tiago/Desktop/DA/p
 /usr/include/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/c++/11/ext/aligned_buffer.h:
 
 /usr/include/c++/11/bits/range_access.h:
 
