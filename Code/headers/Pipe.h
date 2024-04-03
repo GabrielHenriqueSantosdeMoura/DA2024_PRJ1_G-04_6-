@@ -33,6 +33,8 @@ public:
 
     bool getDirection() const;
 
+    void setCapacity(double newCapacity);
+
     bool isBidirectional() const;
 
     //method for checking the data, could be deleted
