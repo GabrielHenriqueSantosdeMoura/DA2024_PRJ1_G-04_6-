@@ -159,11 +159,18 @@ double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructure
     double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
 
     double cityMaxFlow = 0.0;
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == CITY && infrastructure.city.getCode() == cityCode) {
-            cityMaxFlow = graph.findVertex(infrastructure.city.getCode())->getFlow();
+    bool found = false;
+
+    for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
+        if (it->type == CITY && it->city.getCode() == cityCode) {
+            cityMaxFlow = graph.findVertex(it->city.getCode())->getFlow();
+            found = true;
             break;
         }
+    }
+
+    if (!found) {
+        std::cout << "City with code " << cityCode << " does not exist." << std::endl;
     }
 
     return cityMaxFlow;
@@ -278,11 +285,20 @@ map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCo
     }
 
     // reservoir failure
-    for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
+    auto it = infrastructures.begin();
+    bool found = false;
+
+    while (it != infrastructures.end()) {
         if (it->type == RESERVOIR && it->reservoir.getCode() == reservoirCode) {
             infrastructures.erase(it);
+            found = true;
             break;
         }
+        ++it;
+    }
+
+    if (!found) {
+        std::cout << "Reservoir with code " << reservoirCode << " does not exist." << std::endl;
     }
 
     // Calculate new maximum flows after reservoir failure
@@ -313,6 +329,8 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
     map<string, double> initialMaxFlows;
     map<string, double> newMaxFlows;
 
+
+
     // Store the initial maximum flows for cities
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == CITY) {
@@ -321,13 +339,23 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
         }
     }
 
-    // station removal
-    for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
+    // checking if it's real and removal
+    auto it = infrastructures.begin();
+    bool found = false;
+
+    while (it != infrastructures.end()) {
         if (it->type == PUMPINGSTATION && it->pumpingStation.getCode() == stationCode) {
             infrastructures.erase(it);
+            found = true;
             break;
         }
+        ++it;
     }
+
+    if (!found) {
+        std::cout << "Pumping station with code " << stationCode << " does not exist." << std::endl;
+    }
+
 
     // Calculate new maximum flows after station removal
     for (const auto &infrastructure : infrastructures) {
@@ -358,7 +386,7 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
 
 map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures) {
     map<string, double> initialMaxFlows;
-    map<string, double> newMaxFlows;
+    map<string, double> newMaxFlowsPFailure;
 
     // Store the initial maximum flows for cities without the failure
     for (const auto &infrastructure : infrastructures) {
@@ -369,18 +397,28 @@ map<string, pair<double, double>> checkPipelineImpact(const string& sourceServic
     }
 
     //remove the pipeline
-    for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
+    auto it = infrastructures.begin();
+    bool found = false;
+
+    while (it != infrastructures.end()) {
         if (it->type == PIPE && it->pipe.getSourceService() == sourceService && it->pipe.getTargetService() == targetService) {
             infrastructures.erase(it);
+            found = true;
             break;
         }
+        ++it;
     }
+
+    if (!found) {
+        std::cout << "Pipe with source service " << sourceService << " and target service " << targetService << " does not exist" << std::endl;
+    }
+
 
     // Calculate new maximum flows after pipeline failure
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == CITY) {
             double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
-            newMaxFlows[infrastructure.city.getCode()] = maxFlow;
+            newMaxFlowsPFailure[infrastructure.city.getCode()] = maxFlow;
         }
     }
 
@@ -389,7 +427,7 @@ map<string, pair<double, double>> checkPipelineImpact(const string& sourceServic
     for (const auto& initialFlowPair : initialMaxFlows) {
         const string& cityCode = initialFlowPair.first;
         double oldFlow = initialFlowPair.second;
-        double newFlow = newMaxFlows[cityCode];
+        double newFlow = newMaxFlowsPFailure[cityCode];
         if (oldFlow != newFlow) {
             affectedCities[cityCode] = {oldFlow, newFlow};
         }
