@@ -98,10 +98,6 @@ vector<WaterInfrastructure> DataReader::readPipes(const string &path) {
         WaterInfrastructure pipe(sourceService, targetService, capacityValue, unidirectional);
         pipes.push_back(pipe);
 
-        if (!unidirectional) {
-            WaterInfrastructure reversePipe(targetService, sourceService, capacityValue, unidirectional);
-            pipes.push_back(reversePipe);
-        }
     }
     return pipes;
 }

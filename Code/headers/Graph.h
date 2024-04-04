@@ -39,6 +39,7 @@ public:
     Edge<T> * addEdge(Vertex<T> *dest, double w);
     bool removeEdge(T in);
     void removeOutgoingEdges();
+    void setflow(double f);
 
 protected:
     T info;                // info node
@@ -50,6 +51,7 @@ protected:
     unsigned int indegree; // used by topsort
     double dist = 0;
     Edge<T> *path = nullptr;
+    double incflow;
 
     std::vector<Edge<T> *> incoming; // incoming edges
 
@@ -223,6 +225,11 @@ bool Vertex<T>::isProcessing() const {
 template <class T>
 unsigned int Vertex<T>::getIndegree() const {
     return this->indegree;
+}
+
+template <class T>
+void Vertex<T>::setflow(double f) {
+    incflow = f;
 }
 
 template <class T>

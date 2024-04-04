@@ -30,12 +30,10 @@ bool findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
         auto v = q.front();
         q.pop();
         for (auto e : v->getAdj()) {
-            double residual = e->getWeight() - e->getFlow();
-            testAndVisit(q, e, e->getDest(), residual);
+            testAndVisit(q, e, e->getDest(), e->getWeight() - e->getFlow());
         }
         for (auto e : v->getIncoming()) {
-            double residual = e->getFlow();
-            testAndVisit(q, e, e->getOrig(), residual);
+            testAndVisit(q, e, e->getOrig(), e->getFlow());
         }
     }
     return t->isVisited();
@@ -61,11 +59,12 @@ template <class T>
 void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
     for (auto v = t; v != s;) {
         auto e = v->getPath();
+        double currFlow = e->getFlow();
         if (e->getDest() == v) {
-            e->setFlow(e->getFlow() + f);
+            e->setFlow(f + currFlow);
             v = e->getOrig();
         } else {
-            e->setFlow(e->getFlow() - f);
+            e->setFlow(currFlow - f);
             v = e->getDest();
         }
     }
@@ -89,6 +88,14 @@ double edmondsKarp(Graph<T> *g, T source, T target) {
         double f = findMinResidualAlongPath(s, t);
         augmentFlowAlongPath(s, t, f);
         maxFlow += f;
+    }
+
+    for (auto &v : g->getVertexSet()){
+        double flow = 0;
+        for (auto e : v->getIncoming()) {
+            flow += e->getFlow();
+        }
+        v->setflow(flow);
     }
     return maxFlow;
 }
@@ -124,13 +131,6 @@ double calculateMaxFlowForCity(const std::vector<WaterInfrastructure> &infrastru
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == RESERVOIR) {
             graph.addEdge(superSource, infrastructure.reservoir.getCode(), infrastructure.reservoir.getMaxDelivery());
-        }
-    }
-
-    // Add edges from all reservoirs to their corresponding cities
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == RESERVOIR) {
-            graph.addEdge(infrastructure.reservoir.getCode(), infrastructure.city.getCode(), std::numeric_limits<double>::max());
         }
     }
 
@@ -212,12 +212,6 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
         }
     }
 
-    // Add edges from all reservoirs to their corresponding cities
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == RESERVOIR) {
-            graph.addEdge(infrastructure.reservoir.getCode(), infrastructure.city.getCode(), std::numeric_limits<double>::max());
-        }
-    }
 
     // Add edges from all cities to the super sink with capacity equal to their demand
     for (const auto &infrastructure : infrastructures) {
@@ -231,8 +225,7 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
         if (infrastructure.type == PIPE) {
             if (infrastructure.pipe.isBidirectional()) {
                 // For bidirectional pipes, add edges in both directions
-                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
-                graph.addEdge(infrastructure.pipe.getTargetService(), infrastructure.pipe.getSourceService(), infrastructure.pipe.getCapacity());
+                graph.addBidirectionalEdge(infrastructure.pipe.getSourceService(),infrastructure.pipe.getTargetService(),infrastructure.pipe.getCapacity());
             } else {
                 // For unidirectional pipes, add edge in one direction only
                 graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
@@ -248,7 +241,7 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == CITY) {
             double cityMaxFlow = 0.0;
-            for (const auto &edge : graph.findVertex(infrastructure.city.getCode())->getIncoming()) {
+            for (const auto &edge : graph.findVertex(infrastructure.city.getCode())->getAdj()) {
                 if (edge->getOrig()->getInfo() != superSource) {
                     cityMaxFlow += edge->getFlow();
                 }
