@@ -33,9 +33,11 @@ double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructure
 
 map<string, double> findDeficitCities(const vector<WaterInfrastructure> &infrastructures);
 
-map<string, double> checkStationImpact(string stationCode, vector<WaterInfrastructure> &infrastructures);
+map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCode, vector<WaterInfrastructure> &infrastructures);
 
-map<string, double> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures);
+map<string, pair<double, double>> checkStationImpact(const string stationCode, vector<WaterInfrastructure> &infrastructures);
+
+map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures);
 
 void resetData(vector<WaterInfrastructure>& infrastructures);
 

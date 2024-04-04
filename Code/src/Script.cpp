@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <limits>
+#include <fstream>
 #include "headers/Graph.h"
 #include "headers/WaterInfrastructure.h"
 #include "headers/DataReader.h"
@@ -100,8 +101,8 @@ double edmondsKarp(Graph<T> *g, T source, T target) {
     return maxFlow;
 }
 
-double calculateMaxFlowForCity(const std::vector<WaterInfrastructure> &infrastructures, const std::string &cityCode) {
-    Graph<std::string> graph;
+double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructures, const string &cityCode) {
+    Graph<string> graph;
 
     // Add vertices to the graph for each water infrastructure
     for (const auto &infrastructure : infrastructures) {
@@ -120,8 +121,8 @@ double calculateMaxFlowForCity(const std::vector<WaterInfrastructure> &infrastru
         }
     }
 
-    std::string superSource = "SuperSource";
-    std::string superSink = "SuperSink";
+    string superSource = "SuperSource";
+    string superSink = "SuperSink";
 
     // Add the super source and super sink vertices
     graph.addVertex(superSource);
@@ -133,85 +134,6 @@ double calculateMaxFlowForCity(const std::vector<WaterInfrastructure> &infrastru
             graph.addEdge(superSource, infrastructure.reservoir.getCode(), infrastructure.reservoir.getMaxDelivery());
         }
     }
-
-    // Add edges from all cities to the super sink with capacity equal to their demand
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == CITY) {
-            graph.addEdge(infrastructure.city.getCode(), superSink, infrastructure.city.getDemand());
-        }
-    }
-
-    // Add edges to the graph for each pipe connecting the water infrastructures
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == PIPE) {
-            if (infrastructure.pipe.isBidirectional()) {
-                // For bidirectional pipes, add edges in both directions
-                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
-                graph.addEdge(infrastructure.pipe.getTargetService(), infrastructure.pipe.getSourceService(), infrastructure.pipe.getCapacity());
-            } else {
-                // For unidirectional pipes, add edge in one direction only
-                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
-            }
-        }
-    }
-
-    // Find the maximum flow using the Edmonds-Karp algorithm
-    double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
-
-    double cityMaxFlow = 0.0;
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == CITY && infrastructure.city.getCode() == cityCode) {
-            for (const auto &edge : graph.findVertex(infrastructure.city.getCode())->getIncoming()) {
-                if (edge->getOrig()->getInfo() != superSource) {
-                    cityMaxFlow += edge->getFlow();
-                }
-            }
-            break;
-        }
-    }
-
-    return cityMaxFlow;
-}
-
-
-
-
-
-
-void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastructures) {
-    Graph<std::string> graph;
-
-    // Add vertices to the graph for each water infrastructure
-    for (const auto &infrastructure : infrastructures) {
-        switch (infrastructure.type) {
-            case RESERVOIR:
-                graph.addVertex(infrastructure.reservoir.getCode());
-                break;
-            case CITY:
-                graph.addVertex(infrastructure.city.getCode());
-                break;
-            case PUMPINGSTATION:
-                graph.addVertex(infrastructure.pumpingStation.getCode());
-                break;
-            default:
-                break;
-        }
-    }
-
-    std::string superSource = "SuperSource";
-    std::string superSink = "SuperSink";
-
-    // Add the super source and super sink vertices
-    graph.addVertex(superSource);
-    graph.addVertex(superSink);
-
-    // Add edges from the super source to all reservoirs
-    for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == RESERVOIR) {
-            graph.addEdge(superSource, infrastructure.reservoir.getCode(), infrastructure.reservoir.getMaxDelivery());
-        }
-    }
-
 
     // Add edges from all cities to the super sink with capacity equal to their demand
     for (const auto &infrastructure : infrastructures) {
@@ -236,27 +158,99 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
     // Find the maximum flow using the Edmonds-Karp algorithm
     double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
 
-    // Output the maximum flow to each city
-    cout << "Maximum flow to each city:" << endl;
+    double cityMaxFlow = 0.0;
     for (const auto &infrastructure : infrastructures) {
-        if (infrastructure.type == CITY) {
-            double cityMaxFlow = 0.0;
-            for (const auto &edge : graph.findVertex(infrastructure.city.getCode())->getAdj()) {
-                if (edge->getOrig()->getInfo() != superSource) {
-                    cityMaxFlow += edge->getFlow();
-                }
-            }
-            cout << "Maximum flow to city " << infrastructure.city.getCode() << ": " << cityMaxFlow << " m3/sec" << endl;
+        if (infrastructure.type == CITY && infrastructure.city.getCode() == cityCode) {
+            cityMaxFlow = graph.findVertex(infrastructure.city.getCode())->getFlow();
+            break;
         }
     }
 
-    // Print the total maximum flow across all cities
-    cout << "Total maximum flow across all cities: " << totalMaxFlow << " m3/sec" << std::endl;
+    return cityMaxFlow;
 }
 
 
+
+
+
+
+void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastructures) {
+    Graph<string> graph;
+
+    // Create the graph
+    for (const auto &infrastructure : infrastructures) {
+        switch (infrastructure.type) {
+            case RESERVOIR:
+                graph.addVertex(infrastructure.reservoir.getCode());
+                break;
+            case CITY:
+                graph.addVertex(infrastructure.city.getCode());
+                break;
+            case PUMPINGSTATION:
+                graph.addVertex(infrastructure.pumpingStation.getCode());
+                break;
+            default:
+                break;
+        }
+    }
+
+    string superSource = "SuperSource";
+    string superSink = "SuperSink";
+
+    // Add the super source and super sink vertices
+    graph.addVertex(superSource);
+    graph.addVertex(superSink);
+
+    // Add edges from the super source to all reservoirs
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == RESERVOIR) {
+            graph.addEdge(superSource, infrastructure.reservoir.getCode(), infrastructure.reservoir.getMaxDelivery());
+        }
+    }
+
+
+    // Add edges from all cities to the super sink with capacity equal to their demand
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            graph.addEdge(infrastructure.city.getCode(), superSink, infrastructure.city.getDemand());
+        }
+    }
+
+    // Add edges to the graph for each pipe connecting the water infrastructures
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == PIPE) {
+            if (infrastructure.pipe.isBidirectional()) {
+                // For bidirectional pipes, add edges in both directions
+                graph.addBidirectionalEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
+            } else {
+                // For unidirectional pipes, add edge in one direction only
+                graph.addEdge(infrastructure.pipe.getSourceService(), infrastructure.pipe.getTargetService(), infrastructure.pipe.getCapacity());
+            }
+        }
+    }
+
+    // Find the maximum flow using the Edmonds-Karp algorithm
+    double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
+
+    // Output the maximum flow to each city
+    ofstream outputFile("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/max_flow_per_city.txt");
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double cityMaxFlow = graph.findVertex(infrastructure.city.getCode())->getFlow();
+            cout << "Maximum flow to city " << infrastructure.city.getCode() << " - " << infrastructure.city.getName() << ": " << cityMaxFlow << " m3/sec" << endl;
+            outputFile << "Maximum flow to city " << infrastructure.city.getCode() << " - " << infrastructure.city.getName() << ": " << cityMaxFlow << " m3/sec" << endl;
+        }
+    }
+    outputFile.close();
+
+    // Print the total maximum flow across all cities
+    cout << "Total maximum flow across all cities: " << totalMaxFlow << " m3/sec" << endl;
+}
+
+
+//This can be used for 2.2
 map<string, double> findDeficitCities(const vector<WaterInfrastructure> &infrastructures) {
-    map<std::string, double> deficitCities;
+    map<string, double> deficitCities;
 
     for (const auto &infrastructure : infrastructures) {
         if (infrastructure.type == CITY) {
@@ -271,9 +265,63 @@ map<string, double> findDeficitCities(const vector<WaterInfrastructure> &infrast
     return deficitCities;
 }
 
-map<std::string, double> checkStationImpact(string stationCode, vector<WaterInfrastructure> &infrastructures) {
-    std::map<std::string, double> initialDeficitCities = findDeficitCities(infrastructures);
+map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCode, vector<WaterInfrastructure> &infrastructures) {
+    map<string, double> initialMaxFlows;
+    map<string, double> newMaxFlows;
 
+    // Store the initial maximum flows for cities
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            initialMaxFlows[infrastructure.city.getCode()] = maxFlow;
+        }
+    }
+
+    // reservoir failure
+    for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
+        if (it->type == RESERVOIR && it->reservoir.getCode() == reservoirCode) {
+            infrastructures.erase(it);
+            break;
+        }
+    }
+
+    // Calculate new maximum flows after reservoir failure
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            newMaxFlows[infrastructure.city.getCode()] = maxFlow;
+        }
+    }
+
+    // Compare old and new maximum flows to determine impact
+    map<string, pair<double, double>> affectedCities;
+    for (const auto& initialFlowPair : initialMaxFlows) {
+        const string& cityCode = initialFlowPair.first;
+        double oldFlow = initialFlowPair.second;
+        double newFlow = newMaxFlows[cityCode];
+        if (oldFlow != newFlow) {
+            affectedCities[cityCode] = {oldFlow, newFlow};
+        }
+    }
+
+    resetData(infrastructures);// Reset the network in the end so it's good to operate again
+
+    return affectedCities;
+}
+
+map<string, pair<double, double>> checkStationImpact(const string stationCode, vector<WaterInfrastructure> &infrastructures) {
+    map<string, double> initialMaxFlows;
+    map<string, double> newMaxFlows;
+
+    // Store the initial maximum flows for cities
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            initialMaxFlows[infrastructure.city.getCode()] = maxFlow;
+        }
+    }
+
+    // station removal
     for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
         if (it->type == PUMPINGSTATION && it->pumpingStation.getCode() == stationCode) {
             infrastructures.erase(it);
@@ -281,61 +329,94 @@ map<std::string, double> checkStationImpact(string stationCode, vector<WaterInfr
         }
     }
 
-    // Check water supply after removing the pumping station
-    std::map<std::string, double> deficitCities = findDeficitCities(infrastructures);
-
-    // Calculate affected cities
-    std::map<std::string, double> affectedCities;
-    for (const auto& cityPair : deficitCities) {
-        if (initialDeficitCities.find(cityPair.first) == initialDeficitCities.end() || cityPair.second > initialDeficitCities[cityPair.first]) {
-            affectedCities[cityPair.first] = cityPair.second;
+    // Calculate new maximum flows after station removal
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            newMaxFlows[infrastructure.city.getCode()] = maxFlow;
         }
     }
 
-    // Reset the infrastructures
+    // Compare old and new maximum flows to determine impact
+    map<string, pair<double, double>> affectedCities;
+    for (const auto& initialFlowPair : initialMaxFlows) {
+        const string& cityCode = initialFlowPair.first;
+        double oldFlow = initialFlowPair.second;
+        double newFlow = newMaxFlows[cityCode];
+        if (oldFlow != newFlow) {
+            affectedCities[cityCode] = {oldFlow, newFlow};
+        }
+    }
+
+    // Reset the network in the end so it's good to operate again
     resetData(infrastructures);
 
     return affectedCities;
 }
 
-map<string, double> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures) {
-    std::map<std::string, double> initialDeficitCities = findDeficitCities(infrastructures);
 
-    // Find the pipeline with the given source and target services and simulate its failure
+
+map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures) {
+    map<string, double> initialMaxFlows;
+    map<string, double> newMaxFlows;
+
+    // Store the initial maximum flows for cities without the failure
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            initialMaxFlows[infrastructure.city.getCode()] = maxFlow;
+        }
+    }
+
+    //remove the pipeline
     for (auto it = infrastructures.begin(); it != infrastructures.end(); ++it) {
         if (it->type == PIPE && it->pipe.getSourceService() == sourceService && it->pipe.getTargetService() == targetService) {
-            it->pipe.setCapacity(0); // Simulate pipeline failure by setting its capacity to zero
+            infrastructures.erase(it);
             break;
         }
     }
 
-    // Check water supply after simulating pipeline failure
-    std::map<std::string, double> deficitCities = findDeficitCities(infrastructures);
-
-    // Calculate affected cities
-    std::map<std::string, double> affectedCities;
-    for (const auto& cityPair : deficitCities) {
-        if (initialDeficitCities.find(cityPair.first) == initialDeficitCities.end() || cityPair.second > initialDeficitCities[cityPair.first]) {
-            affectedCities[cityPair.first] = cityPair.second;
+    // Calculate new maximum flows after pipeline failure
+    for (const auto &infrastructure : infrastructures) {
+        if (infrastructure.type == CITY) {
+            double maxFlow = calculateMaxFlowForCity(infrastructures, infrastructure.city.getCode());
+            newMaxFlows[infrastructure.city.getCode()] = maxFlow;
         }
     }
 
-    resetData(infrastructures);
+    // Compare old and new maximum flows to see where are the affected cities
+    map<string, pair<double, double>> affectedCities;
+    for (const auto& initialFlowPair : initialMaxFlows) {
+        const string& cityCode = initialFlowPair.first;
+        double oldFlow = initialFlowPair.second;
+        double newFlow = newMaxFlows[cityCode];
+        if (oldFlow != newFlow) {
+            affectedCities[cityCode] = {oldFlow, newFlow};
+        }
+    }
+
+    resetData(infrastructures); // Reset the network in the end so it's good to operate again
 
     return affectedCities;
 }
+
 
 
 void resetData(vector<WaterInfrastructure>& infrastructures) {
     infrastructures.clear();
 
-    // Read data again and populate infrastructures vector
+    // Madeira
     vector<WaterInfrastructure> cities = DataReader::readCities("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Cities_Madeira.csv");
     vector<WaterInfrastructure> stations = DataReader::readPumpingStations("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Stations_Madeira.csv");
     vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Reservoirs_Madeira.csv");
     vector<WaterInfrastructure> pipes = DataReader::readPipes("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Pipes_Madeira.csv");
 
-    // Merge data into infrastructures vector
+    // Portugal
+//    vector<WaterInfrastructure> cities = DataReader::readCities("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Cities.csv");
+//    vector<WaterInfrastructure> stations = DataReader::readPumpingStations("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Stations.csv");
+//    vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Reservoirs.csv");
+//    vector<WaterInfrastructure> pipes = DataReader::readPipes("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Pipes.csv");
+
     infrastructures.insert(infrastructures.end(), cities.begin(), cities.end());
     infrastructures.insert(infrastructures.end(), stations.begin(), stations.end());
     infrastructures.insert(infrastructures.end(), reservoirs.begin(), reservoirs.end());

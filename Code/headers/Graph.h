@@ -40,6 +40,7 @@ public:
     bool removeEdge(T in);
     void removeOutgoingEdges();
     void setflow(double f);
+    double getFlow() const;
 
 protected:
     T info;                // info node
@@ -77,6 +78,7 @@ public:
     void setSelected(bool selected);
     void setReverse(Edge<T> *reverse);
     void setFlow(double flow);
+
 protected:
     Vertex<T> * dest; // destination vertex
     double weight; // edge weight, can also be used for capacity
@@ -230,6 +232,11 @@ unsigned int Vertex<T>::getIndegree() const {
 template <class T>
 void Vertex<T>::setflow(double f) {
     incflow = f;
+}
+
+template <class T>
+double Vertex<T>::getFlow() const {
+    return this->incflow;
 }
 
 template <class T>

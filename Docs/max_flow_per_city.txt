@@ -1,0 +1,10 @@
+Maximum flow to city C_1 - Porto Moniz: 18 m3/sec
+Maximum flow to city C_2 - São Vicente: 34 m3/sec
+Maximum flow to city C_3 - Santana: 46 m3/sec
+Maximum flow to city C_4 - Machico: 137 m3/sec
+Maximum flow to city C_5 - Santa Cruz: 295 m3/sec
+Maximum flow to city C_6 - Funchal: 664 m3/sec
+Maximum flow to city C_7 - Câmara de Lobos: 225 m3/sec
+Maximum flow to city C_8 - Ribeira Brava: 89 m3/sec
+Maximum flow to city C_9 - Ponta do Sol: 59 m3/sec
+Maximum flow to city C_10 - Calheta: 76 m3/sec
