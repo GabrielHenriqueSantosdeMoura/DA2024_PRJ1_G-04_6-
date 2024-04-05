@@ -13,11 +13,9 @@
 
 
 void Menu::clearScreen() {
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
+    for (int i = 0; i < 30; i++){
+        cout << endl;
+    }
 }
 
 vector<WaterInfrastructure> Menu::getInfrastructure(){
@@ -74,7 +72,8 @@ Graph<string> Menu::getGraph(const vector<WaterInfrastructure>& infrastructures)
 
 void Menu::mainMenu() {
     int input;
-    drawBox("Choose your Main File");
+    clearScreen();
+    drawBox("Choose where you want to work");
          cout << "1. Just Madeira cities"
          << endl
          << "2. All Portugal cities"
@@ -110,7 +109,14 @@ void Menu::mainMenu() {
 
 void Menu::afterMenu() {
     int input;
+    clearScreen();
     drawBox("MAIN MENU");
+    if (isPortugal){
+        cout << " *Working at all Portugal cities*" << endl;
+    }
+    else{
+        cout << " *Working at Madeira cities*" << endl;
+    }
     cout << "1. Maximum Water Supply of the Cities"
          << endl
          << "2. Water Supply Adequacy"
@@ -119,13 +125,15 @@ void Menu::afterMenu() {
          << endl
          << "4. Check reliability of the system"
          << endl
-         << "5. Exit"
+         << "5. Change the workplace"
+         << endl
+         << "6. Exit"
          << endl
          << "Enter your choice:";
     cin >> input;
     cout << endl;
 
-    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5)) {
+    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5 or input == 6)) {
         cout << "Invalid option! please try again:" << endl
              << endl;
         afterMenu();
@@ -155,8 +163,13 @@ void Menu::afterMenu() {
             break;
         }
         case 5:{
+            if (isPortugal) isPortugal = false;
+            else isPortugal = true;
+            afterMenu();
+            break;
+        }
+        case 6:{
             exit(EXIT_SUCCESS);
-
         }
     }
 }
@@ -179,7 +192,7 @@ void Menu::goBackMenu() {
     }
     switch (input) {
         case 1:{
-            mainMenu();
+            afterMenu();
             break;
         }
         case 2:{
@@ -190,6 +203,7 @@ void Menu::goBackMenu() {
 }
 
 void Menu::maximumSupply() {
+    clearScreen();
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
     drawBox("MAXIMUM FLOW");
     calculateMaxFlowAllCities(infrastructures);
@@ -197,6 +211,7 @@ void Menu::maximumSupply() {
 }
 
 void Menu::systemRealiability() {
+    clearScreen();
     int input;
     drawBox("SYSTEM REABILITY");
     cout<<endl
@@ -206,7 +221,7 @@ void Menu::systemRealiability() {
         << endl
         << "3. Water supply after removing pipeline"
         << endl
-        << "4. Return back to Main Menu"
+        << "4. Go back to Main Menu"
         << endl
         << "Enter your choice:";
 
@@ -215,15 +230,21 @@ void Menu::systemRealiability() {
     switch(input){
         case 1: {
             //(T3.1)
+            clearScreen();
+            drawBox("REMOVE RESERVOIR");
             removedReservoir();
             break;
         }
         case 2:{
             //(T3.2)
+            clearScreen();
+            drawBox("REMOVE PUMPING STATION");
             removedStation();
             break;
         }
         case 3:{
+            clearScreen();
+            drawBox("REMOVE PIPELINE");
             removedPipeline();
             break;
         }
@@ -240,6 +261,7 @@ void Menu::systemRealiability() {
 }
 
 void Menu::systemAdequacy() {
+    clearScreen();
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
 
     // Find deficit cities
@@ -260,7 +282,6 @@ void Menu::systemAdequacy() {
 
 
 void Menu::removedReservoir() {
-    drawBox("REMOVE RESERVOIR");
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
     string reservoirCodeToRemove;
     if (isPortugal){
@@ -276,12 +297,16 @@ void Menu::removedReservoir() {
     cin >> reservoirCodeToRemove;
     map<string, pair<double, double>> affectedCitiesReservoir = checkReservoirImpact(reservoirCodeToRemove, infrastructures);
     if (affectedCitiesReservoir.find("ReservoirNotFound") != affectedCitiesReservoir.end()) {
-        cout << "The reservoir " << reservoirCodeToRemove << " does not exist. Try again" << endl;
+        cout << endl << "The reservoir " << reservoirCodeToRemove << " does not exist. Try again" << endl;
         removedReservoir();
     }
+    else if (affectedCitiesReservoir.empty()) {
+        cout << "No cities were affected by removing the reservoir." << endl;
+        goBackMenu();
+    }
     else {
-        cout << "Cities affected by removing reservoir " << reservoirCodeToRemove << ":" << endl;
-        cout << "City  Old Flow\tNew Flow" << endl;
+        cout << endl << "Cities affected by removing reservoir " << reservoirCodeToRemove << ":" << endl;
+        cout << "City\tOld Flow\tNew Flow" << endl;
         for (const auto &city: affectedCitiesReservoir) {
             cout << city.first << ":\t" << city.second.first << "\t\t" << city.second.second << endl;
         }
@@ -290,7 +315,6 @@ void Menu::removedReservoir() {
 }
 
 void Menu::removedStation() {
-    drawBox("REMOVE PUMPING STATION");
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
     string stationCodeToRemove;
     if (isPortugal){
@@ -306,12 +330,16 @@ void Menu::removedStation() {
     cin >> stationCodeToRemove;
     map<string, pair<double, double>> affectedCitiesStation = checkStationImpact(stationCodeToRemove, infrastructures);
     if (affectedCitiesStation.find("StationNotFound") != affectedCitiesStation.end()) {
-        cout << "The pumping station " << stationCodeToRemove << " does not exist. Try again" << endl;
+        cout << endl << "The pumping station " << stationCodeToRemove << " does not exist. Try again" << endl;
         removedStation();
     }
+    else if (affectedCitiesStation.empty()) {
+        cout << "No cities were affected by removing the pumping station." << endl;
+        goBackMenu();
+    }
     else {
-        cout << "Cities affected by removing station " << stationCodeToRemove << ":" << endl;
-        cout << "City  Old Flow\tNew Flow" << endl;
+        cout << endl << "Cities affected by removing station " << stationCodeToRemove << ":" << endl;
+        cout << "City\tOld Flow\tNew Flow" << endl;
         for (const auto &city: affectedCitiesStation) {
             cout << city.first << ":\t" << city.second.first << "\t\t" << city.second.second << endl;
         }
@@ -320,7 +348,6 @@ void Menu::removedStation() {
 }
 
 void Menu::removedPipeline() {
-    drawBox("REMOVE PIPELINE");
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
     string sourceServiceToRemove;
     string targetServiceToRemove;
@@ -330,13 +357,14 @@ void Menu::removedPipeline() {
     cin >> targetServiceToRemove;
     map<string, pair<double, double>> affectedCitiesPipe = checkPipelineImpact(sourceServiceToRemove, targetServiceToRemove, infrastructures);
     if (affectedCitiesPipe.find("PipeNotFound") != affectedCitiesPipe.end()) {
-        cout << "The pipeline from " << sourceServiceToRemove << " to " << targetServiceToRemove << " does not exist. Try again" << endl;
+        cout << endl << "The pipeline from " << sourceServiceToRemove << " to " << targetServiceToRemove << " does not exist. Try again" << endl;
         removedPipeline();
     } else if (affectedCitiesPipe.empty()) {
         cout << "No cities were affected by removing the pipeline." << endl;
+        goBackMenu();
     } else {
-        cout << "Cities affected by removing the pipeline from " << sourceServiceToRemove << " to " << targetServiceToRemove << ":" << endl;
-        cout << "City  Old Flow\tNew Flow" << endl;
+        cout << endl << "Cities affected by removing the pipeline from " << sourceServiceToRemove << " to " << targetServiceToRemove << ":" << endl;
+        cout << "City  Old Flow\t\t\tNew Flow" << endl;
         for (const auto &city: affectedCitiesPipe) {
             cout << city.first << ":\t" << city.second.first << "\t\t" << city.second.second << endl;
         }
@@ -351,3 +379,4 @@ void Menu::drawBox(string text) {
     cout << "   |  " << text << "  |" << endl;
     cout << "   +" << horizontalLine << "+" << endl;
 }
+
