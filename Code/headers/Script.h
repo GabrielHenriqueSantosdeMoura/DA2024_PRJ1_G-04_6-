@@ -39,7 +39,9 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
 
 map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures);
 
-void resetData(vector<WaterInfrastructure>& infrastructures);
+void resetDataMadeira(vector<WaterInfrastructure>& infrastructures);
+
+void resetDataPortugal(vector<WaterInfrastructure>& infrastructures);
 
 
 #endif // SCRIPT_H

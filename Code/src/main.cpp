@@ -36,6 +36,8 @@ int main() {
         cout << city.first << ":\t" << city.second.first << "\t\t" << city.second.second << endl;
     }
 
+    resetDataMadeira(infrastructures);
+
     string sourceServiceToRemove = "PS_9";
     string targetServiceToRemove = "PS_10";
 
@@ -47,6 +49,7 @@ int main() {
         cout << city.first << ":\t" << city.second.first << "\t\t" << city.second.second << endl;
     }
 
+    resetDataMadeira(infrastructures);
 
     string reservoirCodeToRemove = "R_4";
     map<string, pair<double, double>> affectedCitiesReservoir = checkReservoirImpact(reservoirCodeToRemove, infrastructures);

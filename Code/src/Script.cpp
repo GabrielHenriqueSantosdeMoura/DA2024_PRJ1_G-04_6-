@@ -320,7 +320,6 @@ map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCo
         }
     }
 
-    resetData(infrastructures);// Reset the network in the end so it's good to operate again
 
     return affectedCities;
 }
@@ -376,8 +375,6 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
         }
     }
 
-    // Reset the network in the end so it's good to operate again
-    resetData(infrastructures);
 
     return affectedCities;
 }
@@ -433,14 +430,13 @@ map<string, pair<double, double>> checkPipelineImpact(const string& sourceServic
         }
     }
 
-    resetData(infrastructures); // Reset the network in the end so it's good to operate again
 
     return affectedCities;
 }
 
 
 
-void resetData(vector<WaterInfrastructure>& infrastructures) {
+void resetDataMadeira(vector<WaterInfrastructure>& infrastructures) {
     infrastructures.clear();
 
     // Madeira
@@ -449,16 +445,24 @@ void resetData(vector<WaterInfrastructure>& infrastructures) {
     vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Reservoirs_Madeira.csv");
     vector<WaterInfrastructure> pipes = DataReader::readPipes("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1DataSetSmall/Pipes_Madeira.csv");
 
-    // Portugal
-//    vector<WaterInfrastructure> cities = DataReader::readCities("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Cities.csv");
-//    vector<WaterInfrastructure> stations = DataReader::readPumpingStations("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Stations.csv");
-//    vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Reservoirs.csv");
-//    vector<WaterInfrastructure> pipes = DataReader::readPipes("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Pipes.csv");
+    infrastructures.insert(infrastructures.end(), cities.begin(), cities.end());
+    infrastructures.insert(infrastructures.end(), stations.begin(), stations.end());
+    infrastructures.insert(infrastructures.end(), reservoirs.begin(), reservoirs.end());
+    infrastructures.insert(infrastructures.end(), pipes.begin(), pipes.end());
+}
+
+void resetDataPortugal(vector<WaterInfrastructure>& infrastructures) {
+    vector<WaterInfrastructure> cities = DataReader::readCities("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Cities.csv");
+    vector<WaterInfrastructure> stations = DataReader::readPumpingStations("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Stations.csv");
+    vector<WaterInfrastructure> reservoirs = DataReader::readReservoirs("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Reservoirs.csv");
+    vector<WaterInfrastructure> pipes = DataReader::readPipes("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/Project1LargeDataSet/Pipes.csv");
 
     infrastructures.insert(infrastructures.end(), cities.begin(), cities.end());
     infrastructures.insert(infrastructures.end(), stations.begin(), stations.end());
     infrastructures.insert(infrastructures.end(), reservoirs.begin(), reservoirs.end());
     infrastructures.insert(infrastructures.end(), pipes.begin(), pipes.end());
+
+
 }
 
 
