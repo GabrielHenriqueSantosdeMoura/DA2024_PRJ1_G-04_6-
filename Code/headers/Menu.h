@@ -7,6 +7,8 @@
 
 class Menu {
 public:
+    bool isPortugal; // If True, we are searching in Portugal Cities, if False we are searching just in Madeira cities
+
     void clearScreen();
 
     vector<WaterInfrastructure> getInfrastructure();
@@ -14,6 +16,8 @@ public:
     Graph<string> getGraph(const vector<WaterInfrastructure>& infrastructures);
 
     void mainMenu();
+
+    void afterMenu();
 
     void goBackMenu();
 
@@ -23,11 +27,13 @@ public:
 
     void systemRealiability();
 
-    void pipelineFailure();
-
     void removedReservoir();
 
     void removedStation();
+
+    void removedPipeline();
+
+    void systemAdequacy();
 };
 
 #endif //DA2024_PRJ1_G_04_6_MENU_H

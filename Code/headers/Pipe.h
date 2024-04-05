@@ -1,4 +1,5 @@
 
+
 #ifndef DA2024_PRJ1_G_04_6__PIPE_H
 #define DA2024_PRJ1_G_04_6__PIPE_H
 #include <string>
@@ -16,10 +17,12 @@ private:
 
     double capacity;
 
+    bool direction;
+
 
 public:
     // Constructors
-    Pipe(const string& sourceService, const string& targetService, double capacity);
+    Pipe(const string& sourceService, const string& targetService, double capacity, bool direction);
     Pipe() = default;
 
     // Getters
@@ -29,7 +32,11 @@ public:
 
     double getCapacity() const;
 
-    string getDirection() const;
+    bool getDirection() const;
+
+    void setCapacity(double newCapacity);
+
+    bool isBidirectional() const;
 
     //method for checking the data, could be deleted
     void print() const{
