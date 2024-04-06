@@ -1,0 +1,120 @@
+\doxysection{Water\+System\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_water_system}{}\label{class_water_system}\index{WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}}
+
+
+A class constructs the graph of Water Infrastructure type.  
+
+
+
+
+{\ttfamily \#include $<$Water\+System.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_water_system_a73dbf606f466c3c914fe7b1fb858e17e}{add\+Vertex\+From\+Vector}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&\mbox{\hyperlink{class_edge}{vertices}})
+\begin{DoxyCompactList}\small\item\em Adds vertices to the graph from a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_water_system_a20972065c413c26ff28094b0dfb5aeda}{add\+Edge\+From\+Vector}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&\mbox{\hyperlink{class_edge}{edges}})
+\begin{DoxyCompactList}\small\item\em Adds edges to the graph from a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_water_system_a620cc615b4b846f6fb9969f7bcd2c1ce}{add\+Edge}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&\mbox{\hyperlink{class_edge}{waterinfrastructure}})
+\begin{DoxyCompactList}\small\item\em Adds an edge to the graph based on water infrastructure data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd}{get\+Vertex\+By\+Code}} (\mbox{\hyperlink{class_edge}{string}} \&code)
+\begin{DoxyCompactList}\small\item\em Retrieves a vertex from the graph based on its code. \end{DoxyCompactList}\item 
+\Hypertarget{class_water_system_a91a2c056c9d86ffeda899f1570ac8a5f}\label{class_water_system_a91a2c056c9d86ffeda899f1570ac8a5f} 
+\mbox{\hyperlink{class_edge}{void}} {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Prints information about vertices and their adjacent edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}}$>$\newline
+class Water\+System$<$ T $>$}
+A class constructs the graph of Water Infrastructure type. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of data stored in the graph vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_water_system_a620cc615b4b846f6fb9969f7bcd2c1ce}\label{class_water_system_a620cc615b4b846f6fb9969f7bcd2c1ce} 
+\index{WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_water_system}{Water\+System}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{waterinfrastructure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds an edge to the graph based on water infrastructure data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waterinfrastructure} & Water infrastructure data containing edge information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was added successfully, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_water_system_a20972065c413c26ff28094b0dfb5aeda}\label{class_water_system_a20972065c413c26ff28094b0dfb5aeda} 
+\index{WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}!addEdgeFromVector@{addEdgeFromVector}}
+\index{addEdgeFromVector@{addEdgeFromVector}!WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdgeFromVector()}{addEdgeFromVector()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_water_system}{Water\+System}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Edge\+From\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&}]{edges }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds edges to the graph from a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edges} & Vector containing edges to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_system_a73dbf606f466c3c914fe7b1fb858e17e}\label{class_water_system_a73dbf606f466c3c914fe7b1fb858e17e} 
+\index{WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}!addVertexFromVector@{addVertexFromVector}}
+\index{addVertexFromVector@{addVertexFromVector}!WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addVertexFromVector()}{addVertexFromVector()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_water_system}{Water\+System}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Vertex\+From\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&}]{vertices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds vertices to the graph from a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Vector containing vertices to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd}\label{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd} 
+\index{WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}!getVertexByCode@{getVertexByCode}}
+\index{getVertexByCode@{getVertexByCode}!WaterSystem$<$ T $>$@{WaterSystem$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexByCode()}{getVertexByCode()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_water_system}{Water\+System}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Vertex\+By\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{string}} \&}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a vertex from the graph based on its code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & Code of the vertex to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the vertex if found, nullptr otherwise. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em runtime\+\_\+error} & if the vertex with the provided code is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/Water\+System.\+h\end{DoxyCompactItemize}

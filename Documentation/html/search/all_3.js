@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['objectives_0',['Objectives',['../md__r_e_a_d_m_e.html#autotoc_md2',1,'']]],
-  ['overview_1',['Overview',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]]
+  ['edge_0',['Edge',['../class_edge.html',1,'Edge&lt; T &gt;'],['../class_edge.html#ab976213419283ed754f42f57b195a288',1,'Edge::Edge()']]]
 ];

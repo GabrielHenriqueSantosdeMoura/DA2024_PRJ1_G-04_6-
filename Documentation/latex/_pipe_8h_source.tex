@@ -1,0 +1,43 @@
+\doxysection{Pipe.\+h}
+\hypertarget{_pipe_8h_source}{}\label{_pipe_8h_source}\index{Code/headers/Pipe.h@{Code/headers/Pipe.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DA2024\_PRJ1\_G\_04\_6\_\_PIPE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DA2024\_PRJ1\_G\_04\_6\_\_PIPE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pipe}{Pipe}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{string}\ sourceService;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ targetService;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{double}\ capacity;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ direction;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_pipe_a4bd06b67d9ba7d912536980f644af71a}{Pipe}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ sourceService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ targetService,\ \textcolor{keywordtype}{double}\ capacity,\ \textcolor{keywordtype}{bool}\ direction);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_pipe_aa3be7c9a0876f4681c05ec0702a532a7}{Pipe}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pipe_a6e1d8786703e0c5b0939a3a91bfed416}{getSourceService}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_pipe_ae6321e1dedb1d0f16e2767bf894bb2e8}{getTargetService}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_pipe_a65a6084868ecdf7ac60a945b343eff25}{getCapacity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pipe_a5bd79a05162c86835bdbfb34c37fb0f3}{isBidirectional}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pipe_a879e0178bffba841f86411e2cb8977a1}{print}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}Pipe:\ "{}\ <<\ getCapacity()\ <<\ '\(\backslash\)n';}}
+\DoxyCodeLine{00071\ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DA2024\_PRJ1\_G\_04\_6\_\_PIPE\_H}}
+
+\end{DoxyCode}

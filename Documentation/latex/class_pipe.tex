@@ -1,0 +1,117 @@
+\doxysection{Pipe Class Reference}
+\hypertarget{class_pipe}{}\label{class_pipe}\index{Pipe@{Pipe}}
+
+
+Represents a pipe connecting two services in a water infrastructure system.  
+
+
+
+
+{\ttfamily \#include $<$Pipe.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pipe_a4bd06b67d9ba7d912536980f644af71a}{Pipe}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&source\+Service, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&target\+Service, \mbox{\hyperlink{class_edge}{double}} capacity, \mbox{\hyperlink{class_edge}{bool}} direction)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_pipe}{Pipe} object with provided attributes. \end{DoxyCompactList}\item 
+\Hypertarget{class_pipe_aa3be7c9a0876f4681c05ec0702a532a7}\label{class_pipe_aa3be7c9a0876f4681c05ec0702a532a7} 
+{\bfseries Pipe} ()=\mbox{\hyperlink{class_edge}{default}}
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{class_pipe}{Pipe} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_pipe_a6e1d8786703e0c5b0939a3a91bfed416}{get\+Source\+Service}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the source service connected by the pipe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_pipe_ae6321e1dedb1d0f16e2767bf894bb2e8}{get\+Target\+Service}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the target service connected by the pipe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_pipe_a65a6084868ecdf7ac60a945b343eff25}{get\+Capacity}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the capacity of the pipe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_pipe_a5bd79a05162c86835bdbfb34c37fb0f3}{is\+Bidirectional}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Checks if the pipe is bidirectional. \end{DoxyCompactList}\item 
+\Hypertarget{class_pipe_a879e0178bffba841f86411e2cb8977a1}\label{class_pipe_a879e0178bffba841f86411e2cb8977a1} 
+\mbox{\hyperlink{class_edge}{void}} {\bfseries print} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Method for printing information about the pipe. Could be deleted or used for debugging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a pipe connecting two services in a water infrastructure system. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pipe_a4bd06b67d9ba7d912536980f644af71a}\label{class_pipe_a4bd06b67d9ba7d912536980f644af71a} 
+\index{Pipe@{Pipe}!Pipe@{Pipe}}
+\index{Pipe@{Pipe}!Pipe@{Pipe}}
+\doxysubsubsection{\texorpdfstring{Pipe()}{Pipe()}}
+{\footnotesize\ttfamily Pipe\+::\+Pipe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{source\+Service,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{target\+Service,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{capacity,  }\item[{\mbox{\hyperlink{class_edge}{bool}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{class_pipe}{Pipe} object with provided attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Service} & The name of the source service. \\
+\hline
+{\em target\+Service} & The name of the target service. \\
+\hline
+{\em capacity} & The capacity of the pipe. \\
+\hline
+{\em direction} & The direction of the pipe (true for unidirectional, false for bidirectional). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pipe_a65a6084868ecdf7ac60a945b343eff25}\label{class_pipe_a65a6084868ecdf7ac60a945b343eff25} 
+\index{Pipe@{Pipe}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!Pipe@{Pipe}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{double}} Pipe\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the capacity of the pipe. 
+
+\begin{DoxyReturn}{Returns}
+The capacity of the pipe. 
+\end{DoxyReturn}
+\Hypertarget{class_pipe_a6e1d8786703e0c5b0939a3a91bfed416}\label{class_pipe_a6e1d8786703e0c5b0939a3a91bfed416} 
+\index{Pipe@{Pipe}!getSourceService@{getSourceService}}
+\index{getSourceService@{getSourceService}!Pipe@{Pipe}}
+\doxysubsubsection{\texorpdfstring{getSourceService()}{getSourceService()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{string}} Pipe\+::get\+Source\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the source service connected by the pipe. 
+
+\begin{DoxyReturn}{Returns}
+The name of the source service. 
+\end{DoxyReturn}
+\Hypertarget{class_pipe_ae6321e1dedb1d0f16e2767bf894bb2e8}\label{class_pipe_ae6321e1dedb1d0f16e2767bf894bb2e8} 
+\index{Pipe@{Pipe}!getTargetService@{getTargetService}}
+\index{getTargetService@{getTargetService}!Pipe@{Pipe}}
+\doxysubsubsection{\texorpdfstring{getTargetService()}{getTargetService()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{string}} Pipe\+::get\+Target\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the target service connected by the pipe. 
+
+\begin{DoxyReturn}{Returns}
+The name of the target service. 
+\end{DoxyReturn}
+\Hypertarget{class_pipe_a5bd79a05162c86835bdbfb34c37fb0f3}\label{class_pipe_a5bd79a05162c86835bdbfb34c37fb0f3} 
+\index{Pipe@{Pipe}!isBidirectional@{isBidirectional}}
+\index{isBidirectional@{isBidirectional}!Pipe@{Pipe}}
+\doxysubsubsection{\texorpdfstring{isBidirectional()}{isBidirectional()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{bool}} Pipe\+::is\+Bidirectional (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the pipe is bidirectional. 
+
+\begin{DoxyReturn}{Returns}
+True if the pipe is bidirectional, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/Pipe.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,495 @@
+\doxysection{Vertex\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_vertex}{}\label{class_vertex}\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+
+
+Represents a vertex in a graph with generic information of type T.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vertex_afcbdd4d4198b672356559cb8fa088408}{Vertex}} (\mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_edge}{in}})
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_vertex}{Vertex} object with the given information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_vertex_a48eae2f7af2362634adab02b7b2dbec6}{get\+Info}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the information stored in the vertex. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_vertex_a0010a7d0b7db1bb81dd2ebb1ffae650a}{get\+Adj}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the outgoing edges from the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex_aa2bb17f6ebd98a67f8da1f689b22fadc}{is\+Visited}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Checks if the vertex has been visited during traversal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex_aaa41dfa4ce1a19b4e529cc6cdc23b764}{is\+Processing}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Checks if the vertex is being processed during traversal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{unsigned}} \mbox{\hyperlink{class_edge}{int}} \mbox{\hyperlink{class_vertex_a25642875df28caa2195bad5a9ae44683}{get\+Indegree}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the number of incoming edges to the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vertex_a15e4ff95fba2bb5970a6551137ceb950}{get\+Path}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the distance from the source vertex. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_vertex_a361d7d0459d37aead6401d6af9f81f0a}{get\+Incoming}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the incoming edges to the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_a95a3f3c55f2ba371fae51d3fe0e76c23}{set\+Visited}} (\mbox{\hyperlink{class_edge}{bool}} visited)
+\begin{DoxyCompactList}\small\item\em Sets the information stored in the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_aac570fc2a4d252082bef2f18365bf9f2}{set\+Processsing}} (\mbox{\hyperlink{class_edge}{bool}} processing)
+\begin{DoxyCompactList}\small\item\em Sets the processing flag of the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_af9c4caaac19bdaae5a88a7a671639b59}{set\+Indegree}} (\mbox{\hyperlink{class_edge}{unsigned}} \mbox{\hyperlink{class_edge}{int}} indegree)
+\begin{DoxyCompactList}\small\item\em Sets the number of incoming edges to the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_a5ebf4b550ec94b89a8f80df1a53cc97d}{set\+Path}} (\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}path)
+\begin{DoxyCompactList}\small\item\em Sets the distance from the source vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vertex_a36a616b80daad6e2a8c6d2fa78a1eb34}{add\+Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}dest, \mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{w}})
+\begin{DoxyCompactList}\small\item\em Adds an outgoing edge from the vertex to the destination vertex with the given weight. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex_ac1f1dd0a8e1019a242f1120d6559c754}{remove\+Edge}} (\mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_edge}{in}})
+\begin{DoxyCompactList}\small\item\em Removes an outgoing edge from the vertex with the given information. \end{DoxyCompactList}\item 
+\Hypertarget{class_vertex_a414ce58fdf35ee5200a82912f3865506}\label{class_vertex_a414ce58fdf35ee5200a82912f3865506} 
+\mbox{\hyperlink{class_edge}{void}} {\bfseries remove\+Outgoing\+Edges} ()
+\begin{DoxyCompactList}\small\item\em Removes all outgoing edges from the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_af9eaa58cd69e42a5abc46357461f086c}{setflow}} (\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{f}})
+\begin{DoxyCompactList}\small\item\em Sets the incoming flow to the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_vertex_afc16b8c5b722e0407189e62825e16ba8}{get\+Flow}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the incoming flow to the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex_a622503fe44ef12d5c39bd1043d47865c}{delete\+Edge}} (\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{edge}})
+\begin{DoxyCompactList}\small\item\em Deletes the specified edge from the vertex\textquotesingle{}s adjacency list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex_a5a6670b842354232bac4dad2f551d66e}{operator$<$}} (\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&\mbox{\hyperlink{class_edge}{vertex}}) \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Overload of the less than operator for comparing vertices based on their distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}}$>$\newline
+class Vertex$<$ T $>$}
+Represents a vertex in a graph with generic information of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertex. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vertex_afcbdd4d4198b672356559cb8fa088408}\label{class_vertex_afcbdd4d4198b672356559cb8fa088408} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\mbox{\hyperlink{class_vertex}{\+::\+Vertex}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{T}}}]{in }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{class_vertex}{Vertex} object with the given information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to be stored in the vertex.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertex. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to be stored in the vertex. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vertex_a36a616b80daad6e2a8c6d2fa78a1eb34}\label{class_vertex_a36a616b80daad6e2a8c6d2fa78a1eb34} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{d,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds an outgoing edge from the vertex to the destination vertex with the given weight. 
+
+Adds an edge from this vertex to the specified destination vertex with the given weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & A pointer to the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the newly created edge.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Pointer to the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the newly created edge. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a622503fe44ef12d5c39bd1043d47865c}\label{class_vertex_a622503fe44ef12d5c39bd1043d47865c} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!deleteEdge@{deleteEdge}}
+\index{deleteEdge@{deleteEdge}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{deleteEdge()}{deleteEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::delete\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{edge }\end{DoxyParamCaption})}
+
+
+
+Deletes the specified edge from the vertex\textquotesingle{}s adjacency list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & A pointer to the edge to be deleted. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_a0010a7d0b7db1bb81dd2ebb1ffae650a}\label{class_vertex_a0010a7d0b7db1bb81dd2ebb1ffae650a} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getAdj@{getAdj}}
+\index{getAdj@{getAdj}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getAdj()}{getAdj()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Adj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the outgoing edges from the vertex. 
+
+Gets the list of outgoing edges from this vertex.
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the outgoing edges.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector containing pointers to the outgoing edges. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_afc16b8c5b722e0407189e62825e16ba8}\label{class_vertex_afc16b8c5b722e0407189e62825e16ba8} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getFlow@{getFlow}}
+\index{getFlow@{getFlow}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getFlow()}{getFlow()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Flow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the incoming flow to the vertex. 
+
+Gets the flow value for the vertex.
+
+\begin{DoxyReturn}{Returns}
+The incoming flow to the vertex.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The flow value of the vertex. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a361d7d0459d37aead6401d6af9f81f0a}\label{class_vertex_a361d7d0459d37aead6401d6af9f81f0a} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getIncoming@{getIncoming}}
+\index{getIncoming@{getIncoming}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIncoming()}{getIncoming()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Incoming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the incoming edges to the vertex. 
+
+Gets the list of incoming edges to this vertex.
+
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the incoming edges.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector containing pointers to the incoming edges. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a25642875df28caa2195bad5a9ae44683}\label{class_vertex_a25642875df28caa2195bad5a9ae44683} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getIndegree@{getIndegree}}
+\index{getIndegree@{getIndegree}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getIndegree()}{getIndegree()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{unsigned}} \mbox{\hyperlink{class_edge}{int}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Indegree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of incoming edges to the vertex. 
+
+\begin{DoxyReturn}{Returns}
+The number of incoming edges. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a48eae2f7af2362634adab02b7b2dbec6}\label{class_vertex_a48eae2f7af2362634adab02b7b2dbec6} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getInfo()}{getInfo()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the information stored in the vertex. 
+
+\begin{DoxyReturn}{Returns}
+The information stored in the vertex.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertex. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+The information stored in the vertex. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a15e4ff95fba2bb5970a6551137ceb950}\label{class_vertex_a15e4ff95fba2bb5970a6551137ceb950} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!getPath@{getPath}}
+\index{getPath@{getPath}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the distance from the source vertex. 
+
+Gets the path associated with the vertex.
+
+\begin{DoxyReturn}{Returns}
+The distance from the source vertex.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the edge representing the path associated with the vertex. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_aaa41dfa4ce1a19b4e529cc6cdc23b764}\label{class_vertex_aaa41dfa4ce1a19b4e529cc6cdc23b764} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!isProcessing@{isProcessing}}
+\index{isProcessing@{isProcessing}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isProcessing()}{isProcessing()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::is\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the vertex is being processed during traversal. 
+
+\begin{DoxyReturn}{Returns}
+True if the vertex is being processed, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_aa2bb17f6ebd98a67f8da1f689b22fadc}\label{class_vertex_aa2bb17f6ebd98a67f8da1f689b22fadc} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!isVisited@{isVisited}}
+\index{isVisited@{isVisited}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isVisited()}{isVisited()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::is\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the vertex has been visited during traversal. 
+
+Checks if the vertex has been visited.
+
+\begin{DoxyReturn}{Returns}
+True if the vertex has been visited, otherwise false.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+True if the vertex has been visited, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_a5a6670b842354232bac4dad2f551d66e}\label{class_vertex_a5a6670b842354232bac4dad2f551d66e} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\mbox{\hyperlink{class_edge}{\+::operator}}$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \&}]{vertex }\end{DoxyParamCaption}) const}
+
+
+
+Overload of the less than operator for comparing vertices based on their distance. 
+
+Overloaded less-\/than operator to compare vertices based on their distance.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vertex has a smaller distance than the specified vertex, otherwise false.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this vertex\textquotesingle{}s distance is less than the other vertex\textquotesingle{}s distance, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_ac1f1dd0a8e1019a242f1120d6559c754}\label{class_vertex_ac1f1dd0a8e1019a242f1120d6559c754} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!removeEdge@{removeEdge}}
+\index{removeEdge@{removeEdge}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::remove\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{T}}}]{in }\end{DoxyParamCaption})}
+
+
+
+Removes an outgoing edge from the vertex with the given information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information of the destination vertex of the edge to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was successfully removed, otherwise false. 
+\end{DoxyReturn}
+\Hypertarget{class_vertex_af9eaa58cd69e42a5abc46357461f086c}\label{class_vertex_af9eaa58cd69e42a5abc46357461f086c} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setflow@{setflow}}
+\index{setflow@{setflow}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setflow()}{setflow()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::setflow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{double}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Sets the incoming flow to the vertex. 
+
+Sets the flow value for the vertex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The incoming flow to be set.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em f} & The flow value to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_af9c4caaac19bdaae5a88a7a671639b59}\label{class_vertex_af9c4caaac19bdaae5a88a7a671639b59} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setIndegree@{setIndegree}}
+\index{setIndegree@{setIndegree}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setIndegree()}{setIndegree()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::set\+Indegree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{unsigned}} \mbox{\hyperlink{class_edge}{int}}}]{indegree }\end{DoxyParamCaption})}
+
+
+
+Sets the number of incoming edges to the vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indegree} & The number of incoming edges. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_a5ebf4b550ec94b89a8f80df1a53cc97d}\label{class_vertex_a5ebf4b550ec94b89a8f80df1a53cc97d} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setPath@{setPath}}
+\index{setPath@{setPath}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::set\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{path }\end{DoxyParamCaption})}
+
+
+
+Sets the distance from the source vertex. 
+
+Sets the path associated with the vertex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dist} & The distance from the source vertex.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Pointer to the edge representing the path to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_aac570fc2a4d252082bef2f18365bf9f2}\label{class_vertex_aac570fc2a4d252082bef2f18365bf9f2} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setProcesssing@{setProcesssing}}
+\index{setProcesssing@{setProcesssing}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setProcesssing()}{setProcesssing()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::set\+Processsing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{bool}}}]{processing }\end{DoxyParamCaption})}
+
+
+
+Sets the processing flag of the vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em processing} & The value to set for the processing flag. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vertex_a95a3f3c55f2ba371fae51d3fe0e76c23}\label{class_vertex_a95a3f3c55f2ba371fae51d3fe0e76c23} 
+\index{Vertex$<$ T $>$@{Vertex$<$ T $>$}!setVisited@{setVisited}}
+\index{setVisited@{setVisited}!Vertex$<$ T $>$@{Vertex$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setVisited()}{setVisited()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::set\+Visited (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{bool}}}]{visited }\end{DoxyParamCaption})}
+
+
+
+Sets the information stored in the vertex. 
+
+Sets the visited status of the vertex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em info} & The information to be stored.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em visited} & The visited status to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/Graph.\+h\end{DoxyCompactItemize}

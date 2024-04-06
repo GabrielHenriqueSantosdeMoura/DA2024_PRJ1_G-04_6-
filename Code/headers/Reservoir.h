@@ -6,43 +6,53 @@
 
 using namespace std;
 
-class Reservoir{
+/**
+ * @brief Class representing a reservoir.
+ */
+class Reservoir {
 
 private:
+    /**< Name of the reservoir. */
     string name;
 
+    /**< Municipality of the reservoir. */
     string municipality;
 
+    /**< ID of the reservoir. */
     int id;
 
+    /**< Code of the reservoir. */
     string code;
 
+    /**< Maximum delivery capacity of the reservoir. */
     double maxDelivery;
 
 public:
-
-    //constructors
+    /**
+     * @brief Default constructor.
+     */
     Reservoir() = default;
 
+    /**
+     * @brief Constructs a reservoir with provided attributes.
+     * @param name Name of the reservoir.
+     * @param municipality Municipality of the reservoir.
+     * @param id ID of the reservoir.
+     * @param code Code of the reservoir.
+     * @param maxDelivery Maximum delivery capacity of the reservoir.
+     */
     Reservoir(const string& name, const string& municipality, int id, const string& code, double maxDelivery);
 
-    //getters
-    string getName() const;
-
-    string getMunicipality() const;
-
-    int getId() const;
-
+    /**< Getter for the code of the reservoir. */
     string getCode() const;
 
+    /**< Getter for the maximum delivery capacity of the reservoir. */
     double getMaxDelivery() const;
 
-    //method for checking the data, could be deleted
-    void print() const{
-        cout<<"reservoir municipality: "<<getCode()<<'\n';
-    }
-
+    /**
+     * @brief Method for printing reservoir information.
+     */
+    void print() const {}
 };
 
-
-#endif DA2024_PRJ1_G_04_6__RESERVOIR_H
+#endif // DA2024_PRJ1_G_04_6__RESERVOIR_H

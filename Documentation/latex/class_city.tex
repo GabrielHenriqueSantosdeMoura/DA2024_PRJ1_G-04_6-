@@ -1,0 +1,134 @@
+\doxysection{City Class Reference}
+\hypertarget{class_city}{}\label{class_city}\index{City@{City}}
+
+
+Represents a city in the water supply network.  
+
+
+
+
+{\ttfamily \#include $<$City.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_city_a4ae03c5ab723f1e0cef944321eeac42b}\label{class_city_a4ae03c5ab723f1e0cef944321eeac42b} 
+{\bfseries City} ()=\mbox{\hyperlink{class_edge}{default}}
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{class_city}{City} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_city_ae9c79715fb282d57ab0c10f857d99a06}{City}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&name, \mbox{\hyperlink{class_edge}{int}} id, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&code, \mbox{\hyperlink{class_edge}{double}} demand, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&population)
+\begin{DoxyCompactList}\small\item\em Constructor with parameters for the \doxylink{class_city}{City} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_city_a4843313c0238390843ae5760ec5b6561}{get\+Name}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Get the name of the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{int}} \mbox{\hyperlink{class_city_ab894c3d0332e6374849b6ebcf910122c}{get\+Id}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Get the unique identifier of the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_city_a243fd56eefd0cedcf2f8fb0bd2876bf7}{get\+Code}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Get the code of the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_city_a3c464469cd7cab75660ab2dc78c22869}{get\+Demand}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Get the rate demand or need of the city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_city_aa93d68cca13811293794cad22df56de1}{get\+Population}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Get the total population of the city. \end{DoxyCompactList}\item 
+\Hypertarget{class_city_a58e45c2c1f305dfaaaa42a719eb318d8}\label{class_city_a58e45c2c1f305dfaaaa42a719eb318d8} 
+\mbox{\hyperlink{class_edge}{void}} {\bfseries print} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Print code of the the city. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a city in the water supply network. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_city_ae9c79715fb282d57ab0c10f857d99a06}\label{class_city_ae9c79715fb282d57ab0c10f857d99a06} 
+\index{City@{City}!City@{City}}
+\index{City@{City}!City@{City}}
+\doxysubsubsection{\texorpdfstring{City()}{City()}}
+{\footnotesize\ttfamily City\+::\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{name,  }\item[{\mbox{\hyperlink{class_edge}{int}}}]{id,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{code,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{demand,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{population }\end{DoxyParamCaption})}
+
+
+
+Constructor with parameters for the \doxylink{class_city}{City} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the city. \\
+\hline
+{\em id} & The unique identifier of the city. \\
+\hline
+{\em code} & The code of the city. \\
+\hline
+{\em demand} & The rate demand or need of the city in m3/sec. \\
+\hline
+{\em population} & The total population of the city. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_city_a243fd56eefd0cedcf2f8fb0bd2876bf7}\label{class_city_a243fd56eefd0cedcf2f8fb0bd2876bf7} 
+\index{City@{City}!getCode@{getCode}}
+\index{getCode@{getCode}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{string}} City\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the code of the city. 
+
+\begin{DoxyReturn}{Returns}
+The code of the city. 
+\end{DoxyReturn}
+\Hypertarget{class_city_a3c464469cd7cab75660ab2dc78c22869}\label{class_city_a3c464469cd7cab75660ab2dc78c22869} 
+\index{City@{City}!getDemand@{getDemand}}
+\index{getDemand@{getDemand}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getDemand()}{getDemand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{double}} City\+::get\+Demand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the rate demand or need of the city. 
+
+\begin{DoxyReturn}{Returns}
+The rate demand or need of the city in m3/sec. 
+\end{DoxyReturn}
+\Hypertarget{class_city_ab894c3d0332e6374849b6ebcf910122c}\label{class_city_ab894c3d0332e6374849b6ebcf910122c} 
+\index{City@{City}!getId@{getId}}
+\index{getId@{getId}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{int}} City\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the unique identifier of the city. 
+
+\begin{DoxyReturn}{Returns}
+The unique identifier of the city. 
+\end{DoxyReturn}
+\Hypertarget{class_city_a4843313c0238390843ae5760ec5b6561}\label{class_city_a4843313c0238390843ae5760ec5b6561} 
+\index{City@{City}!getName@{getName}}
+\index{getName@{getName}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{string}} City\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the name of the city. 
+
+\begin{DoxyReturn}{Returns}
+The name of the city. 
+\end{DoxyReturn}
+\Hypertarget{class_city_aa93d68cca13811293794cad22df56de1}\label{class_city_aa93d68cca13811293794cad22df56de1} 
+\index{City@{City}!getPopulation@{getPopulation}}
+\index{getPopulation@{getPopulation}!City@{City}}
+\doxysubsubsection{\texorpdfstring{getPopulation()}{getPopulation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{string}} City\+::get\+Population (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the total population of the city. 
+
+\begin{DoxyReturn}{Returns}
+The total population of the city. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/City.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\doxysection{Water\+System.\+h}
+\hypertarget{_water_system_8h_source}{}\label{_water_system_8h_source}\index{Code/headers/WaterSystem.h@{Code/headers/WaterSystem.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DA2024\_PRJ1\_G\_04\_6\_\_WATERSYSTEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DA2024\_PRJ1\_G\_04\_6\_\_WATERSYSTEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Reservoir.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}PumpingStation.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}City.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Pipe.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}WaterInfrastructure.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}<\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_water_system}{WaterSystem}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_edge}{Graph<T>}}\ supplySystem;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_system_a73dbf606f466c3c914fe7b1fb858e17e}{addVertexFromVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<T>}}\&\ \mbox{\hyperlink{class_edge}{vertices}})\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{T}}\&\ \mbox{\hyperlink{class_edge}{vertex}}\ :\ \mbox{\hyperlink{class_edge}{vertices}})\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ supplySystem.addVertex(\mbox{\hyperlink{class_edge}{vertex}});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_system_a20972065c413c26ff28094b0dfb5aeda}{addEdgeFromVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<T>}}\&\ \mbox{\hyperlink{class_edge}{edges}})\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{T}}\&\ \mbox{\hyperlink{class_edge}{edge}}\ :\ \mbox{\hyperlink{class_edge}{edges}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>\mbox{\hyperlink{class_water_system_a620cc615b4b846f6fb9969f7bcd2c1ce}{addEdge}}(\mbox{\hyperlink{class_edge}{edge}}))\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{cout}}\ <<\ \textcolor{stringliteral}{"{}Some\ error\ occurred\ while\ adding\ edge"{}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_water_system_a620cc615b4b846f6fb9969f7bcd2c1ce}{addEdge}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{T}}\&\ \mbox{\hyperlink{class_edge}{waterinfrastructure}})\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_edge}{sourceCode}}\ =\ \mbox{\hyperlink{class_edge}{waterinfrastructure}}.pipe.getSourceService();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_edge}{targetCode}}\ =\ \mbox{\hyperlink{class_edge}{waterinfrastructure}}.pipe.getTargetService();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ weight\ =\ \mbox{\hyperlink{class_edge}{waterinfrastructure}}.pipe.getCapacity();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Vertex<T>}}*\ \mbox{\hyperlink{class_edge}{source}}\ =\ this-\/>\mbox{\hyperlink{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd}{getVertexByCode}}(\mbox{\hyperlink{class_edge}{sourceCode}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{Vertex<T>}}*\ \mbox{\hyperlink{class_edge}{target}}\ =\ this-\/>\mbox{\hyperlink{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd}{getVertexByCode}}(\mbox{\hyperlink{class_edge}{targetCode}});}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ supplySystem.addEdge(\mbox{\hyperlink{class_edge}{source}}-\/>getInfo(),\ \mbox{\hyperlink{class_edge}{target}}-\/>getInfo(),\ weight);}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_edge}{Vertex<T>}}*\ \mbox{\hyperlink{class_water_system_a03e252ffadef46cbe2bad8c6100b6bfd}{getVertexByCode}}(\textcolor{keywordtype}{string}\&\ code)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{class_edge}{set}}\ =\ supplySystem.getVertexSet();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \mbox{\hyperlink{class_edge}{vertex}}\ :\ \mbox{\hyperlink{class_edge}{set}})\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure}{WaterInfrastructure}}\ \mbox{\hyperlink{class_edge}{w}}\ =\ \mbox{\hyperlink{class_edge}{vertex}}-\/>getInfo();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_edge}{vertexCode}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_edge}{w}}.type)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CITY:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{vertexCode}}\ =\ \mbox{\hyperlink{class_edge}{w}}.city.getCode();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ PUMPINGSTATION:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{vertexCode}}\ =\ \mbox{\hyperlink{class_edge}{w}}.pumpingStation.getCode();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ RESERVOIR:}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{vertexCode}}\ =\ \mbox{\hyperlink{class_edge}{w}}.reservoir.getCode();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_edge}{runtime\_error}}(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_edge}{vertexCode}}\ ==\ code)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_edge}{vertex}};}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_edge}{runtime\_error}}(\textcolor{stringliteral}{"{}Error"{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_system_a91a2c056c9d86ffeda899f1570ac8a5f}{print}}()\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{class_edge}{vertex}}\ :\ supplySystem.getVertexSet())\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{vertex}}-\/>getInfo().print();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edge}{cout}}\ <<\ \textcolor{stringliteral}{"{}Edges\ number:\ "{}}\ <<\ \mbox{\hyperlink{class_edge}{vertex}}-\/>getAdj().size()\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DA2024\_PRJ1\_G\_04\_6\_\_WATERSYSTEM\_H}}
+
+\end{DoxyCode}

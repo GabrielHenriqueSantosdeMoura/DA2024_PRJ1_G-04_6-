@@ -1,0 +1,96 @@
+\doxysection{Data\+Reader Namespace Reference}
+\hypertarget{namespace_data_reader}{}\label{namespace_data_reader}\index{DataReader@{DataReader}}
+
+
+Namespace containing functions for reading data from CSV files.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \mbox{\hyperlink{namespace_data_reader_a18ec094c38676cf8eb3e44fc787fb84b}{read\+Cities}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&path)
+\begin{DoxyCompactList}\small\item\em Reads information about cities from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \mbox{\hyperlink{namespace_data_reader_a41cb54d0a3ab47369be03a248c63e7ab}{read\+Pumping\+Stations}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&path)
+\begin{DoxyCompactList}\small\item\em Reads information about pumping stations from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \mbox{\hyperlink{namespace_data_reader_aa168f29f084762439dedf3647e693e3f}{read\+Pipes}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&path)
+\begin{DoxyCompactList}\small\item\em Reads information about pipes from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \mbox{\hyperlink{namespace_data_reader_a8d9c3c073fdd27cb407a48a15597419a}{read\+Reservoirs}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&path)
+\begin{DoxyCompactList}\small\item\em Reads information about reservoirs from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace containing functions for reading data from CSV files. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_data_reader_a18ec094c38676cf8eb3e44fc787fb84b}\label{namespace_data_reader_a18ec094c38676cf8eb3e44fc787fb84b} 
+\index{DataReader@{DataReader}!readCities@{readCities}}
+\index{readCities@{readCities}!DataReader@{DataReader}}
+\doxysubsubsection{\texorpdfstring{readCities()}{readCities()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ Data\+Reader\+::read\+Cities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Reads information about cities from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file containing city data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_water_infrastructure}{Water\+Infrastructure} objects representing cities. 
+\end{DoxyReturn}
+\Hypertarget{namespace_data_reader_aa168f29f084762439dedf3647e693e3f}\label{namespace_data_reader_aa168f29f084762439dedf3647e693e3f} 
+\index{DataReader@{DataReader}!readPipes@{readPipes}}
+\index{readPipes@{readPipes}!DataReader@{DataReader}}
+\doxysubsubsection{\texorpdfstring{readPipes()}{readPipes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ Data\+Reader\+::read\+Pipes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Reads information about pipes from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file containing pipe data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_water_infrastructure}{Water\+Infrastructure} objects representing pipes. 
+\end{DoxyReturn}
+\Hypertarget{namespace_data_reader_a41cb54d0a3ab47369be03a248c63e7ab}\label{namespace_data_reader_a41cb54d0a3ab47369be03a248c63e7ab} 
+\index{DataReader@{DataReader}!readPumpingStations@{readPumpingStations}}
+\index{readPumpingStations@{readPumpingStations}!DataReader@{DataReader}}
+\doxysubsubsection{\texorpdfstring{readPumpingStations()}{readPumpingStations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ Data\+Reader\+::read\+Pumping\+Stations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Reads information about pumping stations from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file containing pumping station data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_water_infrastructure}{Water\+Infrastructure} objects representing pumping stations. 
+\end{DoxyReturn}
+\Hypertarget{namespace_data_reader_a8d9c3c073fdd27cb407a48a15597419a}\label{namespace_data_reader_a8d9c3c073fdd27cb407a48a15597419a} 
+\index{DataReader@{DataReader}!readReservoirs@{readReservoirs}}
+\index{readReservoirs@{readReservoirs}!DataReader@{DataReader}}
+\doxysubsubsection{\texorpdfstring{readReservoirs()}{readReservoirs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ Data\+Reader\+::read\+Reservoirs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Reads information about reservoirs from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file containing reservoir data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_water_infrastructure}{Water\+Infrastructure} objects representing reservoirs. 
+\end{DoxyReturn}

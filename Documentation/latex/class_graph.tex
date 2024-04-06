@@ -1,0 +1,220 @@
+\doxysection{Graph\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_graph}{}\label{class_graph}\index{Graph$<$ T $>$@{Graph$<$ T $>$}}
+
+
+Represents a graph data structure with vertices and edges.  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_graph_a8b7b7465fbfd562e2a469f90a437ab75}{find\+Vertex}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&\mbox{\hyperlink{class_edge}{in}}) \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Finds a vertex in the graph with the given information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph_a00be284ea2be3b3d0f0d2e493b70245b}{add\+Vertex}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&\mbox{\hyperlink{class_edge}{in}})
+\begin{DoxyCompactList}\small\item\em Adds a vertex with the given information to the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph_ac61af3aafe6277215f5a3b3cc7d58ce2}{add\+Edge}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&\mbox{\hyperlink{class_edge}{sourc}}, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&dest, \mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{w}})
+\begin{DoxyCompactList}\small\item\em Adds an edge between two vertices in the graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph_aeb94a42983b1612ddbeade1a2a0132ea}{add\+Bidirectional\+Edge}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&\mbox{\hyperlink{class_edge}{sourc}}, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&dest, \mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{w}})
+\begin{DoxyCompactList}\small\item\em Adds a bidirectional edge between two vertices in the graph. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_graph_a41624b03fcb6bd29e4df574a1ec58541}{get\+Vertex\+Set}} () \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the set of vertices in the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}}$>$\newline
+class Graph$<$ T $>$}
+Represents a graph data structure with vertices and edges. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_graph_aeb94a42983b1612ddbeade1a2a0132ea}\label{class_graph_aeb94a42983b1612ddbeade1a2a0132ea} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addBidirectionalEdge@{addBidirectionalEdge}}
+\index{addBidirectionalEdge@{addBidirectionalEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addBidirectionalEdge()}{addBidirectionalEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Bidirectional\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{sourc,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{dest,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds a bidirectional edge between two vertices in the graph. 
+
+Adds a bidirectional edge between vertices with the specified source and destination information, with the given weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The information of the source vertex. \\
+\hline
+{\em dest} & The information of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the bidirectional edge is added successfully, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The information of the source vertex. \\
+\hline
+{\em dest} & The information of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the bidirectional edge was successfully added, false if either the source or destination vertex does not exist. 
+\end{DoxyReturn}
+\Hypertarget{class_graph_ac61af3aafe6277215f5a3b3cc7d58ce2}\label{class_graph_ac61af3aafe6277215f5a3b3cc7d58ce2} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{sourc,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{dest,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Adds an edge between two vertices in the graph. 
+
+Adds an edge between vertices with the specified source and destination information, with the given weight.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The information of the source vertex. \\
+\hline
+{\em dest} & The information of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge is added successfully, false otherwise (\doxylink{class_edge_ab976213419283ed754f42f57b195a288}{e.\+g}., if the source or destination vertex does not exist).
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sourc} & The information of the source vertex. \\
+\hline
+{\em dest} & The information of the destination vertex. \\
+\hline
+{\em w} & The weight of the edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was successfully added, false if either the source or destination vertex does not exist. 
+\end{DoxyReturn}
+\Hypertarget{class_graph_a00be284ea2be3b3d0f0d2e493b70245b}\label{class_graph_a00be284ea2be3b3d0f0d2e493b70245b} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{in }\end{DoxyParamCaption})}
+
+
+
+Adds a vertex with the given information to the graph. 
+
+Adds a new vertex with the given information to the graph.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to be stored in the new vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vertex is added successfully, false otherwise (\doxylink{class_edge_ab976213419283ed754f42f57b195a288}{e.\+g}., if the vertex already exists).
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to be stored in the new vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vertex was successfully added, false if a vertex with the same information already exists. 
+\end{DoxyReturn}
+\Hypertarget{class_graph_a8b7b7465fbfd562e2a469f90a437ab75}\label{class_graph_a8b7b7465fbfd562e2a469f90a437ab75} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!findVertex@{findVertex}}
+\index{findVertex@{findVertex}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{findVertex()}{findVertex()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::find\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{T}} \&}]{in }\end{DoxyParamCaption}) const}
+
+
+
+Finds a vertex in the graph with the given information. 
+
+Finds and returns a vertex with the given information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to search for in the vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the vertex with the specified information, or nullptr if not found.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The information to search for in the vertices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the vertex if found, otherwise nullptr. 
+\end{DoxyReturn}
+\Hypertarget{class_graph_a41624b03fcb6bd29e4df574a1ec58541}\label{class_graph_a41624b03fcb6bd29e4df574a1ec58541} 
+\index{Graph$<$ T $>$@{Graph$<$ T $>$}!getVertexSet@{getVertexSet}}
+\index{getVertexSet@{getVertexSet}!Graph$<$ T $>$@{Graph$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getVertexSet()}{getVertexSet()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+std\+::vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$\+::get\+Vertex\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the set of vertices in the graph. 
+
+Gets the vector containing pointers to all vertices in the graph.
+
+\begin{DoxyReturn}{Returns}
+A vector containing pointers to all vertices in the graph.
+\end{DoxyReturn}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Vector containing pointers to all vertices. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/Graph.\+h\end{DoxyCompactItemize}

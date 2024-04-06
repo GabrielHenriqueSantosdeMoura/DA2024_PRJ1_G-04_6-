@@ -1,0 +1,30 @@
+\doxysection{Data\+Reader.\+h}
+\hypertarget{_data_reader_8h_source}{}\label{_data_reader_8h_source}\index{Code/headers/DataReader.h@{Code/headers/DataReader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATA\_READER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATA\_READER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}City.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}PumpingStation.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Pipe.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Reservoir.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}WaterInfrastructure.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_data_reader}{DataReader}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ vector<WaterInfrastructure>\ \mbox{\hyperlink{namespace_data_reader_a18ec094c38676cf8eb3e44fc787fb84b}{readCities}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ path);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \ \ \ \ vector<WaterInfrastructure>\ \mbox{\hyperlink{namespace_data_reader_a41cb54d0a3ab47369be03a248c63e7ab}{readPumpingStations}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ path);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \ \ \ \ vector<WaterInfrastructure>\ \mbox{\hyperlink{namespace_data_reader_aa168f29f084762439dedf3647e693e3f}{readPipes}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ path);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ vector<WaterInfrastructure>\ \mbox{\hyperlink{namespace_data_reader_a8d9c3c073fdd27cb407a48a15597419a}{readReservoirs}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ path);}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATA\_READER\_H}}
+
+\end{DoxyCode}
