@@ -435,7 +435,7 @@ map<string, pair<double, double>> checkPipelineImpact(const string& sourceServic
 
     return affectedCities;
 }
-void balanceFlow(Graph<string> *g) {
+/* void balanceFlow(Graph<string> *g) {
     double totalDiff = 0.0;
     double maxDiff = 0.0;
     int pipeCount = 0;
@@ -497,4 +497,4 @@ void balanceFlow(Graph<string> *g) {
     cout << "Average difference: " << avgDiffAfter << endl;
     cout << "Variance of differences: " << (totalDiffAfter * totalDiffAfter) / pipeCount << endl;
     cout << "Maximum difference: " << maxDiffAfter << endl;
-}
+} */
