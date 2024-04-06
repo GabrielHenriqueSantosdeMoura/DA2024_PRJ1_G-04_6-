@@ -40,6 +40,6 @@ map<string, pair<double, double>> checkStationImpact(string stationCode, vector<
 
 map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures);
 
-void balanceFlow(Graph<string> *g);
+//void balanceFlow(Graph<string> *g);
 
 #endif // SCRIPT_H

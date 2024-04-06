@@ -121,19 +121,17 @@ void Menu::afterMenu() {
          << endl
          << "2. Water Supply Adequacy"
          << endl
-         << "3. Metrics before/after balacing the network"
+         << "3. Check reliability of the system"
          << endl
-         << "4. Check reliability of the system"
+         << "4. Change the workplace"
          << endl
-         << "5. Change the workplace"
-         << endl
-         << "6. Exit"
+         << "5. Exit"
          << endl
          << "Enter your choice:";
     cin >> input;
     cout << endl;
 
-    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5 or input == 6)) {
+    if (!(input == 1 or input == 2 or input == 3 or input == 4 or input == 5)) {
         cout << "Invalid option! please try again:" << endl
              << endl;
         afterMenu();
@@ -151,24 +149,17 @@ void Menu::afterMenu() {
             break;
         }
         case 3:{
-            vector<WaterInfrastructure> infrastructures = getInfrastructure();
-            Graph<string> graph = getGraph(infrastructures);
-            balanceFlow(&graph);
-            goBackMenu();
-            break;
-        }
-        case 4:{
             //(T3)
             systemRealiability();
             break;
         }
-        case 5:{
+        case 4:{
             if (isPortugal) isPortugal = false;
             else isPortugal = true;
             afterMenu();
             break;
         }
-        case 6:{
+        case 5:{
             exit(EXIT_SUCCESS);
         }
     }
