@@ -1,0 +1,82 @@
+\doxysection{Water\+Infrastructure.\+h}
+\hypertarget{_water_infrastructure_8h_source}{}\label{_water_infrastructure_8h_source}\index{Code/headers/WaterInfrastructure.h@{Code/headers/WaterInfrastructure.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DA2024\_PRJ1\_G\_04\_6\_\_WATERINFRASTRUCTURE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DA2024\_PRJ1\_G\_04\_6\_\_WATERINFRASTRUCTURE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Pipe.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}City.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}PumpingStation.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Reservoir.h"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum}\ Watertype\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ CITY,}
+\DoxyCodeLine{00016\ \ \ \ \ PUMPINGSTATION,}
+\DoxyCodeLine{00018\ \ \ \ \ PIPE,}
+\DoxyCodeLine{00020\ \ \ \ \ RESERVOIR}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_water_infrastructure}{WaterInfrastructure}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_city}{City}}\ \mbox{\hyperlink{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}{city}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_pumping_station}{PumpingStation}}\ \mbox{\hyperlink{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}{pumpingStation}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_pipe}{Pipe}}\ \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_reservoir}{Reservoir}}\ \mbox{\hyperlink{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}{reservoir}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ Watertype\ type;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a3ac9c73724c022160ba6830a0bb5a4ef}{WaterInfrastructure}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&name,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&code,\ \textcolor{keywordtype}{double}\ demand,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&population)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}{city}}(name,\ id,\ code,\ demand,\ population),\ type(CITY)\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a79ba9ccaf33bd92cf21854c6d014cafa}{WaterInfrastructure}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&sourceService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&targetService,\ \textcolor{keywordtype}{double}\ capacity,\ \textcolor{keywordtype}{bool}\ direction)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}}(sourceService,\ targetService,\ capacity,\ direction),\ type(PIPE)\ \{\}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a3917cb81292014325f939dd15bb14f70}{WaterInfrastructure}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&code)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}{pumpingStation}}(id,\ code),\ type(PUMPINGSTATION)\ \{\}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a3af651e0dd03378516f047dbeca0401c}{WaterInfrastructure}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&municipality,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&code,\ \textcolor{keywordtype}{double}\ maxDelivery)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}{reservoir}}(name,\ municipality,\ id,\ code,\ maxDelivery),\ type(RESERVOIR)\ \{\}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_water_infrastructure_ac690767d0cf32209276a006699c6e2ca}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_water_infrastructure}{WaterInfrastructure}}\ \&\mbox{\hyperlink{class_edge}{other}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ !=\ \mbox{\hyperlink{class_edge}{other}}.type)\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CITY:}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}{city}}.\mbox{\hyperlink{class_city_a243fd56eefd0cedcf2f8fb0bd2876bf7}{getCode}}()\ ==\ \mbox{\hyperlink{class_edge}{other}}.city.getCode();}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ RESERVOIR:}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}{reservoir}}.\mbox{\hyperlink{class_reservoir_acd292cabfc6d4a23fe8d58daae7c4b41}{getCode}}()\ ==\ \mbox{\hyperlink{class_edge}{other}}.reservoir.getCode();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ PUMPINGSTATION:}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}{pumpingStation}}.\mbox{\hyperlink{class_pumping_station_ae48125127e5f8668a3453a5469be6d27}{getCode}}()\ ==\ \mbox{\hyperlink{class_edge}{other}}.pumpingStation.getCode();}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ PIPE:}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}}.\mbox{\hyperlink{class_pipe_a6e1d8786703e0c5b0939a3a91bfed416}{getSourceService}}()\ ==\ \mbox{\hyperlink{class_edge}{other}}.pipe.getSourceService()\ \&\&}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}}.\mbox{\hyperlink{class_pipe_ae6321e1dedb1d0f16e2767bf894bb2e8}{getTargetService}}()\ ==\ \mbox{\hyperlink{class_edge}{other}}.pipe.getTargetService();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00104\ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_water_infrastructure_a24eb72a5295b1d4b6af51b93780af3ec}{print}}()\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CITY:}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}{city}}.\mbox{\hyperlink{class_city_a58e45c2c1f305dfaaaa42a719eb318d8}{print}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ RESERVOIR:}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}{reservoir}}.\mbox{\hyperlink{class_reservoir_ad9b311060d35ccda6cc27fb956615678}{print}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ PUMPINGSTATION:}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}{pumpingStation}}.\mbox{\hyperlink{class_pumping_station_a8b3e912ee05f748a67c0a495423e64cf}{print}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ PIPE:}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}}.\mbox{\hyperlink{class_pipe_a879e0178bffba841f86411e2cb8977a1}{print}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//DA2024\_PRJ1\_G\_04\_6\_\_WATERINFRASTRUCTURE\_H}}
+
+\end{DoxyCode}

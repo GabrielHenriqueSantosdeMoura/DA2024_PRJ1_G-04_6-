@@ -16,14 +16,8 @@ double Pipe::getCapacity() const {
     return capacity;
 }
 
-bool Pipe::getDirection() const {
-    return direction;
-}
 
 bool Pipe::isBidirectional() const {
     return direction == 0;
 }
 
-void Pipe::setCapacity(double newCapacity) {
-    capacity = newCapacity;
-}

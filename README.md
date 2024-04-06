@@ -24,7 +24,7 @@ The dataset stores in CSV files and  includes information about water reservoirs
 
 ### Data Handling
 
-- Read and parse data, loading in into an appropriate data structure.
+- Read and parse data, loading in into an appropriate graph data structure.
 
 ## Tasks 
 
@@ -33,20 +33,11 @@ The dataset stores in CSV files and  includes information about water reservoirs
 - [x] Implementing algorithms for determining maximum water flow, assessing network configuration, load balancing, and evaluating network resilience.
 - [x] Documenting the implemented code using Doxygen and analyzing time complexity.
 
-## Setup
-
-To run this project, use the following commands:
-
-```
-
-
-```
-
 ## Authors
 
 Sofia Blyzniuk<br/>
 Gabriel Henrique Santos de Moura<br/>
-Tiago 
+Tiago Filipe Sousa Gonçalves
 
 
 

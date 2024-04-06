@@ -1,4 +1,3 @@
-
 #include "headers/City.h"
 using namespace std;
 

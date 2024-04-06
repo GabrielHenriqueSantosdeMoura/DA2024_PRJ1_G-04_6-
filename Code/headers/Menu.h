@@ -7,32 +7,78 @@
 
 class Menu {
 public:
-    bool isPortugal; // If True, we are searching in Portugal Cities, if False we are searching just in Madeira cities
+    /**
+     * @brief Flag indicating whether the search is performed in Portugal cities (true) or just in Madeira cities (false).
+     */
+    bool isPortugal;
 
+    /**
+     * @brief Clears the console screen.
+     */
     void clearScreen();
 
+    /**
+     * @brief Retrieves a vector containing information about water infrastructures.
+     * @return Vector containing WaterInfrastructure objects.
+     */
     vector<WaterInfrastructure> getInfrastructure();
 
+    /**
+     * @brief Constructs a graph based on the provided water infrastructure data.
+     * @param infrastructures Vector containing water infrastructure data.
+     * @return Graph constructed from the provided data.
+     */
     Graph<string> getGraph(const vector<WaterInfrastructure>& infrastructures);
 
+    /**
+     * @brief Displays the main menu.
+     */
     void mainMenu();
 
+    /**
+     * @brief Displays the menu after an action has been performed.
+     */
     void afterMenu();
 
+    /**
+     * @brief Displays the "go back" menu.
+     */
     void goBackMenu();
 
+    /**
+     * @brief Draws a box around the specified text.
+     * @param text The text to be displayed within the box.
+     */
     void drawBox(string text);
 
+    /**
+     * @brief Calculates and displays the maximum supply.
+     */
     void maximumSupply();
 
+    /**
+     * @brief Calculates and displays the system reliability.
+     */
     void systemRealiability();
 
+    /**
+     * @brief Displays the menu for removing a reservoir.
+     */
     void removedReservoir();
 
+    /**
+     * @brief Displays the menu for removing a station.
+     */
     void removedStation();
 
+    /**
+     * @brief Displays the menu for removing a pipeline.
+     */
     void removedPipeline();
 
+    /**
+     * @brief Calculates and displays the system adequacy.
+     */
     void systemAdequacy();
 };
 

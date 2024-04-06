@@ -1,0 +1,184 @@
+\doxysection{Water\+Infrastructure Class Reference}
+\hypertarget{class_water_infrastructure}{}\label{class_water_infrastructure}\index{WaterInfrastructure@{WaterInfrastructure}}
+
+
+Represents a water infrastructure object, such as a city, pumping station, pipe, or reservoir.  
+
+
+
+
+{\ttfamily \#include $<$Water\+Infrastructure.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_water_infrastructure_a3ac9c73724c022160ba6830a0bb5a4ef}{Water\+Infrastructure}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&name, \mbox{\hyperlink{class_edge}{int}} id, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&code, \mbox{\hyperlink{class_edge}{double}} demand, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&population)
+\begin{DoxyCompactList}\small\item\em Constructs a water infrastructure element representing a city. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_water_infrastructure_a79ba9ccaf33bd92cf21854c6d014cafa}{Water\+Infrastructure}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&source\+Service, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&target\+Service, \mbox{\hyperlink{class_edge}{double}} capacity, \mbox{\hyperlink{class_edge}{bool}} direction)
+\begin{DoxyCompactList}\small\item\em Constructs a water infrastructure element representing a pipe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_water_infrastructure_a3917cb81292014325f939dd15bb14f70}{Water\+Infrastructure}} (\mbox{\hyperlink{class_edge}{int}} id, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&code)
+\begin{DoxyCompactList}\small\item\em Constructs a water infrastructure element representing a pumping station. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_water_infrastructure_a3af651e0dd03378516f047dbeca0401c}{Water\+Infrastructure}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&name, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&municipality, \mbox{\hyperlink{class_edge}{int}} id, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&code, \mbox{\hyperlink{class_edge}{double}} max\+Delivery)
+\begin{DoxyCompactList}\small\item\em Constructs a water infrastructure element representing a reservoir. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{class_water_infrastructure_ac690767d0cf32209276a006699c6e2ca}{operator==}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} \&\mbox{\hyperlink{class_edge}{other}}) \mbox{\hyperlink{class_edge}{const}}
+\begin{DoxyCompactList}\small\item\em Overloaded equality operator to compare water infrastructure objects. \end{DoxyCompactList}\item 
+\Hypertarget{class_water_infrastructure_a24eb72a5295b1d4b6af51b93780af3ec}\label{class_water_infrastructure_a24eb72a5295b1d4b6af51b93780af3ec} 
+\mbox{\hyperlink{class_edge}{void}} {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Prints the information of the water infrastructure element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_city}{City}} \mbox{\hyperlink{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}{city}}
+\item 
+\mbox{\hyperlink{class_pumping_station}{Pumping\+Station}} \mbox{\hyperlink{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}{pumping\+Station}}
+\item 
+\mbox{\hyperlink{class_pipe}{Pipe}} \mbox{\hyperlink{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}{pipe}}
+\item 
+\mbox{\hyperlink{class_reservoir}{Reservoir}} \mbox{\hyperlink{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}{reservoir}}
+\item 
+\Hypertarget{class_water_infrastructure_a98d65fd49490dd128daa0940889d5a2f}\label{class_water_infrastructure_a98d65fd49490dd128daa0940889d5a2f} 
+Watertype {\bfseries type}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a water infrastructure object, such as a city, pumping station, pipe, or reservoir. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_water_infrastructure_a3ac9c73724c022160ba6830a0bb5a4ef}\label{class_water_infrastructure_a3ac9c73724c022160ba6830a0bb5a4ef} 
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{WaterInfrastructure()}{WaterInfrastructure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Water\+Infrastructure\+::\+Water\+Infrastructure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{name,  }\item[{\mbox{\hyperlink{class_edge}{int}}}]{id,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{code,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{demand,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{population }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a water infrastructure element representing a city. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the city. \\
+\hline
+{\em id} & ID of the city. \\
+\hline
+{\em code} & Code of the city. \\
+\hline
+{\em demand} & Water demand of the city. \\
+\hline
+{\em population} & Population of the city. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_infrastructure_a79ba9ccaf33bd92cf21854c6d014cafa}\label{class_water_infrastructure_a79ba9ccaf33bd92cf21854c6d014cafa} 
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{WaterInfrastructure()}{WaterInfrastructure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Water\+Infrastructure\+::\+Water\+Infrastructure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{source\+Service,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{target\+Service,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{capacity,  }\item[{\mbox{\hyperlink{class_edge}{bool}}}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a water infrastructure element representing a pipe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Service} & Source service of the pipe. \\
+\hline
+{\em target\+Service} & Target service of the pipe. \\
+\hline
+{\em capacity} & Capacity of the pipe. \\
+\hline
+{\em direction} & Direction of the pipe. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_infrastructure_a3917cb81292014325f939dd15bb14f70}\label{class_water_infrastructure_a3917cb81292014325f939dd15bb14f70} 
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{WaterInfrastructure()}{WaterInfrastructure()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Water\+Infrastructure\+::\+Water\+Infrastructure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{int}}}]{id,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a water infrastructure element representing a pumping station. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID of the pumping station. \\
+\hline
+{\em code} & Code of the pumping station. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_water_infrastructure_a3af651e0dd03378516f047dbeca0401c}\label{class_water_infrastructure_a3af651e0dd03378516f047dbeca0401c} 
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\index{WaterInfrastructure@{WaterInfrastructure}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{WaterInfrastructure()}{WaterInfrastructure()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Water\+Infrastructure\+::\+Water\+Infrastructure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{name,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{municipality,  }\item[{\mbox{\hyperlink{class_edge}{int}}}]{id,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{code,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{max\+Delivery }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a water infrastructure element representing a reservoir. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the reservoir. \\
+\hline
+{\em municipality} & Municipality of the reservoir. \\
+\hline
+{\em id} & ID of the reservoir. \\
+\hline
+{\em code} & Code of the reservoir. \\
+\hline
+{\em max\+Delivery} & Maximum delivery of the reservoir. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_water_infrastructure_ac690767d0cf32209276a006699c6e2ca}\label{class_water_infrastructure_ac690767d0cf32209276a006699c6e2ca} 
+\index{WaterInfrastructure@{WaterInfrastructure}!operator==@{operator==}}
+\index{operator==@{operator==}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{bool}} Water\+Infrastructure\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Overloaded equality operator to compare water infrastructure objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Water infrastructure element to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the elements are equal, false otherwise. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7}\label{class_water_infrastructure_a77f8e7e5c971612d9337bff21e6cb0a7} 
+\index{WaterInfrastructure@{WaterInfrastructure}!city@{city}}
+\index{city@{city}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{city}{city}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_city}{City}} Water\+Infrastructure\+::city}
+
+\texorpdfstring{$<$}{<} \doxylink{class_city}{City} information. Pumping station information. \Hypertarget{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c}\label{class_water_infrastructure_a981c8a4cbcb0c3ddba702fa240f0fa3c} 
+\index{WaterInfrastructure@{WaterInfrastructure}!pipe@{pipe}}
+\index{pipe@{pipe}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{pipe}{pipe}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pipe}{Pipe}} Water\+Infrastructure\+::pipe}
+
+\doxylink{class_reservoir}{Reservoir} information. \Hypertarget{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2}\label{class_water_infrastructure_a626f0f99eee588505625368f1a792bc2} 
+\index{WaterInfrastructure@{WaterInfrastructure}!pumpingStation@{pumpingStation}}
+\index{pumpingStation@{pumpingStation}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{pumpingStation}{pumpingStation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pumping_station}{Pumping\+Station}} Water\+Infrastructure\+::pumping\+Station}
+
+\doxylink{class_pipe}{Pipe} information. \Hypertarget{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6}\label{class_water_infrastructure_aa723b6838c9f90f1fdcdc9733a0b77b6} 
+\index{WaterInfrastructure@{WaterInfrastructure}!reservoir@{reservoir}}
+\index{reservoir@{reservoir}!WaterInfrastructure@{WaterInfrastructure}}
+\doxysubsubsection{\texorpdfstring{reservoir}{reservoir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_reservoir}{Reservoir}} Water\+Infrastructure\+::reservoir}
+
+Type of water infrastructure element. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/headers/Water\+Infrastructure.\+h\end{DoxyCompactItemize}
