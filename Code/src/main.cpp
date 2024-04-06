@@ -1,9 +1,4 @@
-#include <iostream>
-#include <vector>
 #include "headers/DataReader.h"
-#include "headers/WaterSystem.h"
-#include "headers/WaterInfrastructure.h"
-#include "headers/Script.h"
 #include "headers/Menu.h"
 
 int main() {

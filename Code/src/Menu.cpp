@@ -1,7 +1,3 @@
-//
-// Created by Gabriel on 19/03/2024.
-//
-
 #include <iostream>
 #include <vector>
 #include "headers/DataReader.h"
@@ -10,7 +6,6 @@
 #include "headers/WaterInfrastructure.h"
 #include "headers/Script.h"
 #include <string>
-
 
 void Menu::clearScreen() {
     for (int i = 0; i < 30; i++){

@@ -1,6 +1,6 @@
-
 #ifndef DA2024_PRJ1_G_04_6__CITY_H
 #define DA2024_PRJ1_G_04_6__CITY_H
+
 #include <string>
 #include <iostream>
 

@@ -1,7 +1,6 @@
-
-
 #ifndef DA2024_PRJ1_G_04_6__PIPE_H
 #define DA2024_PRJ1_G_04_6__PIPE_H
+
 #include <string>
 #include <iostream>
 
