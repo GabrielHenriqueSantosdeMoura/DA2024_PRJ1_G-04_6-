@@ -192,7 +192,7 @@ void Menu::maximumSupply() {
     clearScreen();
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
     drawBox("MAXIMUM FLOW");
-    calculateMaxFlowAllCities(infrastructures);
+    Script::calculateMaxFlowAllCities(infrastructures);
     goBackMenu();
 }
 
@@ -251,7 +251,7 @@ void Menu::systemAdequacy() {
     vector<WaterInfrastructure> infrastructures = getInfrastructure();
 
     // Find deficit cities
-    map<string, double> deficitCities = findDeficitCities(infrastructures);
+    map<string, double> deficitCities = Script::findDeficitCities(infrastructures);
 
     // Check if there are any deficit cities
     if (deficitCities.empty()) {
@@ -281,7 +281,7 @@ void Menu::removedReservoir() {
              << "Enter your choice:";
     }
     cin >> reservoirCodeToRemove;
-    map<string, pair<double, double>> affectedCitiesReservoir = checkReservoirImpact(reservoirCodeToRemove, infrastructures);
+    map<string, pair<double, double>> affectedCitiesReservoir = Script::checkReservoirImpact(reservoirCodeToRemove, infrastructures);
     if (affectedCitiesReservoir.find("ReservoirNotFound") != affectedCitiesReservoir.end()) {
         cout << endl << "The reservoir " << reservoirCodeToRemove << " does not exist. Try again" << endl;
         removedReservoir();
@@ -314,7 +314,7 @@ void Menu::removedStation() {
              << "Enter your choice:";
     }
     cin >> stationCodeToRemove;
-    map<string, pair<double, double>> affectedCitiesStation = checkStationImpact(stationCodeToRemove, infrastructures);
+    map<string, pair<double, double>> affectedCitiesStation = Script::checkStationImpact(stationCodeToRemove, infrastructures);
     if (affectedCitiesStation.find("StationNotFound") != affectedCitiesStation.end()) {
         cout << endl << "The pumping station " << stationCodeToRemove << " does not exist. Try again" << endl;
         removedStation();
@@ -341,7 +341,7 @@ void Menu::removedPipeline() {
     cin >> sourceServiceToRemove;
     cout << "Now choose your target service to remove the pipe:";
     cin >> targetServiceToRemove;
-    map<string, pair<double, double>> affectedCitiesPipe = checkPipelineImpact(sourceServiceToRemove, targetServiceToRemove, infrastructures);
+    map<string, pair<double, double>> affectedCitiesPipe = Script::checkPipelineImpact(sourceServiceToRemove, targetServiceToRemove, infrastructures);
     if (affectedCitiesPipe.find("PipeNotFound") != affectedCitiesPipe.end()) {
         cout << endl << "The pipeline from " << sourceServiceToRemove << " to " << targetServiceToRemove << " does not exist. Try again" << endl;
         removedPipeline();

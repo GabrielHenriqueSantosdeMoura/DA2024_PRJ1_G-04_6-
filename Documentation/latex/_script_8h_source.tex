@@ -15,35 +15,43 @@
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}headers/DataReader.h"{}}}
 \DoxyCodeLine{00012\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ testAndVisit(\mbox{\hyperlink{class_edge}{queue}}<\mbox{\hyperlink{class_edge}{Vertex<T>}}*>\ \&\mbox{\hyperlink{class_edge}{q}},\ \mbox{\hyperlink{class_edge}{Edge<T>}}\ *\mbox{\hyperlink{class_edge}{e}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{w}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge}{residual}});}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00033\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00034\ \textcolor{keywordtype}{bool}\ findAugmentingPath(\mbox{\hyperlink{class_edge}{Graph<T>}}\ *\mbox{\hyperlink{class_edge}{g}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}});}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00043\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{double}\ findMinResidualAlongPath(\mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}});}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ augmentFlowAlongPath(\mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge}{f}});}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00064\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
-\DoxyCodeLine{00065\ \textcolor{keywordtype}{double}\ edmondsKarp(\mbox{\hyperlink{class_edge}{Graph<T>}}\ *\mbox{\hyperlink{class_edge}{g}},\ \mbox{\hyperlink{class_edge}{T}}\ \mbox{\hyperlink{class_edge}{source}},\ \mbox{\hyperlink{class_edge}{T}}\ \mbox{\hyperlink{class_edge}{target}});}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ calculateMaxFlowAllCities(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\&\ \mbox{\hyperlink{class_edge}{infrastructures}});}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00079\ \textcolor{keywordtype}{double}\ calculateMaxFlowForCity(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{class_edge}{cityCode}});}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00086\ \mbox{\hyperlink{class_edge}{map<string,\ double>}}\ findDeficitCities(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00094\ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ checkReservoirImpact(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{class_edge}{reservoirCode}},\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00102\ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ checkStationImpact(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_edge}{stationCode}},\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00111\ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ checkPipelineImpact(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ sourceService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ targetService,\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
-\DoxyCodeLine{00112\ }
-\DoxyCodeLine{00117\ \textcolor{keywordtype}{void}\ balanceFlow(\mbox{\hyperlink{class_edge}{Graph<string>}}\ *\mbox{\hyperlink{class_edge}{g}});}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCRIPT\_H}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_script}{Script}}\{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_script_af75b11a073d4367af9043bf00d7198c4}{testAndVisit}}(\mbox{\hyperlink{class_edge}{queue}}<\mbox{\hyperlink{class_edge}{Vertex<T>}}*>\ \&\mbox{\hyperlink{class_edge}{q}},\ \mbox{\hyperlink{class_edge}{Edge<T>}}\ *\mbox{\hyperlink{class_edge}{e}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{w}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge}{residual}});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespace_script_ae8bc13c4a9e4181f5900860b38f47841}{edmondsKarp}}(\mbox{\hyperlink{class_edge}{Graph<T>}}\ *\mbox{\hyperlink{class_edge}{g}},\ \mbox{\hyperlink{class_edge}{T}}\ \mbox{\hyperlink{class_edge}{source}},\ \mbox{\hyperlink{class_edge}{T}}\ \mbox{\hyperlink{class_edge}{target}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_script_a425e475bcd474a320a3a00cef0b34de8}{findAugmentingPath}}(\mbox{\hyperlink{class_edge}{Graph<T>}}\ *\mbox{\hyperlink{class_edge}{g}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}});}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a}{findMinResidualAlongPath}}(\mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_script_af5f6d09b4680468ae24b0e58978d7bda}{augmentFlowAlongPath}}(\mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{s}},\ \mbox{\hyperlink{class_edge}{Vertex<T>}}\ *\mbox{\hyperlink{class_edge}{t}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_edge}{f}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_script_a1b5aec1dc75c1fd789ea488e9ec40e22}{calculateMaxFlowAllCities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\&\ \mbox{\hyperlink{class_edge}{infrastructures}});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{namespace_script_a1651083bc5071d2739ce4b703dfe7d90}{calculateMaxFlowForCity}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{class_edge}{cityCode}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_edge}{map<string,\ double>}}\ \mbox{\hyperlink{namespace_script_a0442c9fbf818286443000b3a84af90c3}{findDeficitCities}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ \mbox{\hyperlink{namespace_script_a61415356b3f43f6294c597d7d5e6efd1}{checkReservoirImpact}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \mbox{\hyperlink{class_edge}{reservoirCode}},\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ \mbox{\hyperlink{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b}{checkStationImpact}}(\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_edge}{stationCode}},\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{class_edge}{map<string,\ pair<double,\ double>}}>\ \mbox{\hyperlink{namespace_script_a7a84d674849ddd3c33375f65f18162af}{checkPipelineImpact}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ sourceService,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ targetService,\ \mbox{\hyperlink{class_edge}{vector<WaterInfrastructure>}}\ \&\mbox{\hyperlink{class_edge}{infrastructures}});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_script_a56752911817f49e25aa567133497ee12}{balanceFlow}}(\mbox{\hyperlink{class_edge}{Graph<string>}}\ *\mbox{\hyperlink{class_edge}{g}});}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCRIPT\_H}}
 
 \end{DoxyCode}

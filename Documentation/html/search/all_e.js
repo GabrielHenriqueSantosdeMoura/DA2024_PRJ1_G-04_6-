@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vertex_0',['Vertex',['../class_vertex.html',1,'Vertex&lt; T &gt;'],['../class_vertex.html#afcbdd4d4198b672356559cb8fa088408',1,'Vertex::Vertex()']]]
+  ['tasks_0',['Tasks',['../index.html#autotoc_md6',1,'']]],
+  ['testandvisit_1',['testAndVisit',['../namespace_script.html#af75b11a073d4367af9043bf00d7198c4',1,'Script']]]
 ];

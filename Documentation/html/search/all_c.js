@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['setflow_0',['setflow',['../class_vertex.html#af9eaa58cd69e42a5abc46357461f086c',1,'Vertex']]],
-  ['setflow_1',['setFlow',['../class_edge.html#a1819116e2c156733a14bbd94cc27908e',1,'Edge']]],
-  ['setindegree_2',['setIndegree',['../class_vertex.html#af9c4caaac19bdaae5a88a7a671639b59',1,'Vertex']]],
-  ['setpath_3',['setPath',['../class_vertex.html#a5ebf4b550ec94b89a8f80df1a53cc97d',1,'Vertex']]],
-  ['setprocesssing_4',['setProcesssing',['../class_vertex.html#aac570fc2a4d252082bef2f18365bf9f2',1,'Vertex']]],
-  ['setreverse_5',['setReverse',['../class_edge.html#afe8f8429025756c63f38e8c6fde7382c',1,'Edge']]],
-  ['setvisited_6',['setVisited',['../class_vertex.html#a95a3f3c55f2ba371fae51d3fe0e76c23',1,'Vertex']]],
-  ['supply_20system_7',['Water Supply System',['../index.html',1,'']]],
-  ['system_8',['Water Supply System',['../index.html',1,'']]],
-  ['systemadequacy_9',['systemAdequacy',['../class_menu.html#a871d94500850ad3bd2fc9af317528f43',1,'Menu']]],
-  ['systemrealiability_10',['systemRealiability',['../class_menu.html#ab7334199ee2b01aece1f0a7cdc1c42aa',1,'Menu']]]
+  ['readcities_0',['readCities',['../namespace_data_reader.html#a18ec094c38676cf8eb3e44fc787fb84b',1,'DataReader']]],
+  ['readpipes_1',['readPipes',['../namespace_data_reader.html#aa168f29f084762439dedf3647e693e3f',1,'DataReader']]],
+  ['readpumpingstations_2',['readPumpingStations',['../namespace_data_reader.html#a41cb54d0a3ab47369be03a248c63e7ab',1,'DataReader']]],
+  ['readreservoirs_3',['readReservoirs',['../namespace_data_reader.html#a8d9c3c073fdd27cb407a48a15597419a',1,'DataReader']]],
+  ['removedpipeline_4',['removedPipeline',['../class_menu.html#ad00c06a079ad3502b6d6e16e8fc0c6b8',1,'Menu']]],
+  ['removedreservoir_5',['removedReservoir',['../class_menu.html#ade2f6e606d892dd6d16483011ee9370d',1,'Menu']]],
+  ['removedstation_6',['removedStation',['../class_menu.html#a2adecbbf315ac7a897c69d44eff6bd28',1,'Menu']]],
+  ['removeedge_7',['removeEdge',['../class_vertex.html#ac1f1dd0a8e1019a242f1120d6559c754',1,'Vertex']]],
+  ['removeoutgoingedges_8',['removeOutgoingEdges',['../class_vertex.html#a414ce58fdf35ee5200a82912f3865506',1,'Vertex']]],
+  ['reservoir_9',['Reservoir',['../class_reservoir.html',1,'Reservoir'],['../class_reservoir.html#a8ac8c6af7db655aaa5fd64d0eec42539',1,'Reservoir::Reservoir()=default'],['../class_reservoir.html#a1439dbc26b170e3829abc64d0ca09069',1,'Reservoir::Reservoir(const string &amp;name, const string &amp;municipality, int id, const string &amp;code, double maxDelivery)']]],
+  ['reservoir_10',['reservoir',['../class_water_infrastructure.html#aa723b6838c9f90f1fdcdc9733a0b77b6',1,'WaterInfrastructure']]]
 ];

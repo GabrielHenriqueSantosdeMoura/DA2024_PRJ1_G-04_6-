@@ -1,14 +1,8 @@
 var searchData=
 [
-  ['readcities_0',['readCities',['../namespace_data_reader.html#a18ec094c38676cf8eb3e44fc787fb84b',1,'DataReader']]],
-  ['readpipes_1',['readPipes',['../namespace_data_reader.html#aa168f29f084762439dedf3647e693e3f',1,'DataReader']]],
-  ['readpumpingstations_2',['readPumpingStations',['../namespace_data_reader.html#a41cb54d0a3ab47369be03a248c63e7ab',1,'DataReader']]],
-  ['readreservoirs_3',['readReservoirs',['../namespace_data_reader.html#a8d9c3c073fdd27cb407a48a15597419a',1,'DataReader']]],
-  ['removedpipeline_4',['removedPipeline',['../class_menu.html#ad00c06a079ad3502b6d6e16e8fc0c6b8',1,'Menu']]],
-  ['removedreservoir_5',['removedReservoir',['../class_menu.html#ade2f6e606d892dd6d16483011ee9370d',1,'Menu']]],
-  ['removedstation_6',['removedStation',['../class_menu.html#a2adecbbf315ac7a897c69d44eff6bd28',1,'Menu']]],
-  ['removeedge_7',['removeEdge',['../class_vertex.html#ac1f1dd0a8e1019a242f1120d6559c754',1,'Vertex']]],
-  ['removeoutgoingedges_8',['removeOutgoingEdges',['../class_vertex.html#a414ce58fdf35ee5200a82912f3865506',1,'Vertex']]],
-  ['reservoir_9',['Reservoir',['../class_reservoir.html',1,'Reservoir'],['../class_reservoir.html#a8ac8c6af7db655aaa5fd64d0eec42539',1,'Reservoir::Reservoir()=default'],['../class_reservoir.html#a1439dbc26b170e3829abc64d0ca09069',1,'Reservoir::Reservoir(const string &amp;name, const string &amp;municipality, int id, const string &amp;code, double maxDelivery)']]],
-  ['reservoir_10',['reservoir',['../class_water_infrastructure.html#aa723b6838c9f90f1fdcdc9733a0b77b6',1,'WaterInfrastructure']]]
+  ['pipe_0',['Pipe',['../class_pipe.html',1,'Pipe'],['../class_pipe.html#a4bd06b67d9ba7d912536980f644af71a',1,'Pipe::Pipe(const string &amp;sourceService, const string &amp;targetService, double capacity, bool direction)'],['../class_pipe.html#aa3be7c9a0876f4681c05ec0702a532a7',1,'Pipe::Pipe()=default']]],
+  ['pipe_1',['pipe',['../class_water_infrastructure.html#a981c8a4cbcb0c3ddba702fa240f0fa3c',1,'WaterInfrastructure']]],
+  ['print_2',['print',['../class_city.html#a58e45c2c1f305dfaaaa42a719eb318d8',1,'City::print()'],['../class_pipe.html#a879e0178bffba841f86411e2cb8977a1',1,'Pipe::print()'],['../class_pumping_station.html#a8b3e912ee05f748a67c0a495423e64cf',1,'PumpingStation::print()'],['../class_reservoir.html#ad9b311060d35ccda6cc27fb956615678',1,'Reservoir::print()'],['../class_water_infrastructure.html#a24eb72a5295b1d4b6af51b93780af3ec',1,'WaterInfrastructure::print()'],['../class_water_system.html#a91a2c056c9d86ffeda899f1570ac8a5f',1,'WaterSystem::print()']]],
+  ['pumpingstation_3',['PumpingStation',['../class_pumping_station.html',1,'PumpingStation'],['../class_pumping_station.html#a0363c31e9b6f235f73414949f30d749f',1,'PumpingStation::PumpingStation()=default'],['../class_pumping_station.html#aa4146bbde03d1dd22684e1f200a1039e',1,'PumpingStation::PumpingStation(int id, const string &amp;code)']]],
+  ['pumpingstation_4',['pumpingStation',['../class_water_infrastructure.html#a626f0f99eee588505625368f1a792bc2',1,'WaterInfrastructure']]]
 ];
