@@ -11,7 +11,7 @@ using namespace std;
 
 
 template <class T>
-void testAndVisit(queue<Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double residual) {
+void Script:: testAndVisit(queue<Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double residual) {
     if (!w->isVisited() && residual > 0) {
         w->setVisited(true);
         w->setPath(e);
@@ -20,7 +20,7 @@ void testAndVisit(queue<Vertex<T>*> &q, Edge<T> *e, Vertex<T> *w, double residua
 }
 
 template <class T>
-bool findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
+bool Script:: findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
     for (auto v : g->getVertexSet()) {
         v->setVisited(false);
     }
@@ -41,7 +41,7 @@ bool findAugmentingPath(Graph<T> *g, Vertex<T> *s, Vertex<T> *t) {
 }
 
 template <class T>
-double findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t) {
+double Script:: findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t) {
     double f = INF;
     for (auto v = t; v != s;) {
         auto e = v->getPath();
@@ -57,22 +57,7 @@ double findMinResidualAlongPath(Vertex<T> *s, Vertex<T> *t) {
 }
 
 template <class T>
-void augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
-    for (auto v = t; v != s;) {
-        auto e = v->getPath();
-        double currFlow = e->getFlow();
-        if (e->getDest() == v) {
-            e->setFlow(f + currFlow);
-            v = e->getOrig();
-        } else {
-            e->setFlow(currFlow - f);
-            v = e->getDest();
-        }
-    }
-}
-
-template <class T>
-double edmondsKarp(Graph<T> *g, T source, T target) {
+double Script:: edmondsKarp(Graph<T> *g, T source, T target) {
     Vertex<T> *s = g->findVertex(source);
     Vertex<T> *t = g->findVertex(target);
 
@@ -101,7 +86,24 @@ double edmondsKarp(Graph<T> *g, T source, T target) {
     return maxFlow;
 }
 
-double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructures, const string &cityCode) {
+
+template <class T>
+void Script:: augmentFlowAlongPath(Vertex<T> *s, Vertex<T> *t, double f) {
+    for (auto v = t; v != s;) {
+        auto e = v->getPath();
+        double currFlow = e->getFlow();
+        if (e->getDest() == v) {
+            e->setFlow(f + currFlow);
+            v = e->getOrig();
+        } else {
+            e->setFlow(currFlow - f);
+            v = e->getDest();
+        }
+    }
+}
+
+
+double Script:: calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructures, const string &cityCode) {
     Graph<string> graph;
 
     // Add vertices to the graph for each water infrastructure
@@ -155,8 +157,9 @@ double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructure
         }
     }
 
+
     // Find the maximum flow using the Edmonds-Karp algorithm
-    double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
+    double totalMaxFlow = Script::edmondsKarp(&graph, superSource, superSink);
 
     double cityMaxFlow = 0.0;
     bool found = false;
@@ -181,7 +184,7 @@ double calculateMaxFlowForCity(const vector<WaterInfrastructure> &infrastructure
 
 
 
-void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastructures) {
+void Script:: calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastructures) {
     Graph<string> graph;
 
     // Create the graph
@@ -237,7 +240,7 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
     }
 
     // Find the maximum flow using the Edmonds-Karp algorithm
-    double totalMaxFlow = edmondsKarp(&graph, superSource, superSink);
+    double totalMaxFlow = Script::edmondsKarp(&graph, superSource, superSink);
 
     // Output the maximum flow to each city
     ofstream outputFile("/home/tiago/Desktop/DA/projeto/DA2024_PRJ1_G-04_6-/Docs/max_flow_per_city.txt");
@@ -256,7 +259,7 @@ void calculateMaxFlowAllCities(const std::vector<WaterInfrastructure> &infrastru
 
 
 //This can be used for 2.2
-map<string, double> findDeficitCities(const vector<WaterInfrastructure> &infrastructures) {
+map<string, double> Script::findDeficitCities(const vector<WaterInfrastructure> &infrastructures) {
     map<string, double> deficitCities;
 
     for (const auto &infrastructure : infrastructures) {
@@ -272,7 +275,7 @@ map<string, double> findDeficitCities(const vector<WaterInfrastructure> &infrast
     return deficitCities;
 }
 
-map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCode, vector<WaterInfrastructure> &infrastructures) {
+map<string, pair<double, double>> Script:: checkReservoirImpact(const string& reservoirCode, vector<WaterInfrastructure> &infrastructures) {
     map<string, double> initialMaxFlows;
     map<string, double> newMaxFlows;
 
@@ -325,7 +328,7 @@ map<string, pair<double, double>> checkReservoirImpact(const string& reservoirCo
     return affectedCities;
 }
 
-map<string, pair<double, double>> checkStationImpact(const string stationCode, vector<WaterInfrastructure> &infrastructures) {
+map<string, pair<double, double>> Script:: checkStationImpact(const string stationCode, vector<WaterInfrastructure> &infrastructures) {
     map<string, double> initialMaxFlows;
     map<string, double> newMaxFlows;
 
@@ -382,7 +385,7 @@ map<string, pair<double, double>> checkStationImpact(const string stationCode, v
 
 
 
-map<string, pair<double, double>> checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures) {
+map<string, pair<double, double>> Script:: checkPipelineImpact(const string& sourceService, const string& targetService, vector<WaterInfrastructure> &infrastructures) {
     map<string, double> initialMaxFlows;
     map<string, double> newMaxFlowsPFailure;
 

@@ -1,0 +1,304 @@
+\doxysection{Script Namespace Reference}
+\hypertarget{namespace_script}{}\label{namespace_script}\index{Script@{Script}}
+
+
+Namespace containing all of the algorithms of the water supply system.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ }\\\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{namespace_script_af75b11a073d4367af9043bf00d7198c4}{test\+And\+Visit}} (\mbox{\hyperlink{class_edge}{queue}}$<$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \&\mbox{\hyperlink{class_edge}{q}}, \mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{e}}, \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{w}}, \mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{residual}})
+\begin{DoxyCompactList}\small\item\em Tests and visits a vertex based on an edge and residual flow. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ }\\\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{namespace_script_ae8bc13c4a9e4181f5900860b38f47841}{edmonds\+Karp}} (\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{g}}, \mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_edge}{source}}, \mbox{\hyperlink{class_edge}{T}} \mbox{\hyperlink{class_edge}{target}})
+\begin{DoxyCompactList}\small\item\em Implements the Edmonds-\/\+Karp algorithm to find the maximum flow in a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ }\\\mbox{\hyperlink{class_edge}{bool}} \mbox{\hyperlink{namespace_script_a425e475bcd474a320a3a00cef0b34de8}{find\+Augmenting\+Path}} (\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{g}}, \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{s}}, \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{t}})
+\begin{DoxyCompactList}\small\item\em Finds an augmenting path in the graph using BFS. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ }\\\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a}{find\+Min\+Residual\+Along\+Path}} (\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{s}}, \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{t}})
+\begin{DoxyCompactList}\small\item\em Finds the minimum residual along an augmenting path. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ }\\\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{namespace_script_af5f6d09b4680468ae24b0e58978d7bda}{augment\+Flow\+Along\+Path}} (\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{s}}, \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{t}}, \mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{class_edge}{f}})
+\begin{DoxyCompactList}\small\item\em Augments the flow along an augmenting path. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{namespace_script_a1b5aec1dc75c1fd789ea488e9ec40e22}{calculate\+Max\+Flow\+All\+Cities}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}})
+\begin{DoxyCompactList}\small\item\em Calculates the maximum flow for all cities in the water infrastructure data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{double}} \mbox{\hyperlink{namespace_script_a1651083bc5071d2739ce4b703dfe7d90}{calculate\+Max\+Flow\+For\+City}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}}, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&\mbox{\hyperlink{class_edge}{city\+Code}})
+\begin{DoxyCompactList}\small\item\em Calculates the maximum flow for a specific city in the water infrastructure data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{double}} $>$ \mbox{\hyperlink{namespace_script_a0442c9fbf818286443000b3a84af90c3}{find\+Deficit\+Cities}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}})
+\begin{DoxyCompactList}\small\item\em Finds cities with water supply deficit in the water infrastructure data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ \mbox{\hyperlink{namespace_script_a61415356b3f43f6294c597d7d5e6efd1}{check\+Reservoir\+Impact}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&\mbox{\hyperlink{class_edge}{reservoir\+Code}}, \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}})
+\begin{DoxyCompactList}\small\item\em Checks the impact of a reservoir on the water infrastructure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ \mbox{\hyperlink{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b}{check\+Station\+Impact}} (\mbox{\hyperlink{class_edge}{string}} \mbox{\hyperlink{class_edge}{station\+Code}}, \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}})
+\begin{DoxyCompactList}\small\item\em Checks the impact of a pumping station on the water infrastructure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ \mbox{\hyperlink{namespace_script_a7a84d674849ddd3c33375f65f18162af}{check\+Pipeline\+Impact}} (\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&source\+Service, \mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&target\+Service, \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&\mbox{\hyperlink{class_edge}{infrastructures}})
+\begin{DoxyCompactList}\small\item\em Checks the impact of a pipeline on the water infrastructure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{void}} \mbox{\hyperlink{namespace_script_a56752911817f49e25aa567133497ee12}{balance\+Flow}} (\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{string}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_edge}{g}})
+\begin{DoxyCompactList}\small\item\em Balances the flow in the graph to ensure conservation of flow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace containing all of the algorithms of the water supply system. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_script_af5f6d09b4680468ae24b0e58978d7bda}\label{namespace_script_af5f6d09b4680468ae24b0e58978d7bda} 
+\index{Script@{Script}!augmentFlowAlongPath@{augmentFlowAlongPath}}
+\index{augmentFlowAlongPath@{augmentFlowAlongPath}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{augmentFlowAlongPath()}{augmentFlowAlongPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} Script\+::augment\+Flow\+Along\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{s,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{t,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Augments the flow along an augmenting path. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Source vertex of the path. \\
+\hline
+{\em t} & Target vertex of the path. \\
+\hline
+{\em f} & Flow to augment along the path. @complexity O(\+E), where E is the number of edges in the graph. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespace_script_a56752911817f49e25aa567133497ee12}\label{namespace_script_a56752911817f49e25aa567133497ee12} 
+\index{Script@{Script}!balanceFlow@{balanceFlow}}
+\index{balanceFlow@{balanceFlow}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{balanceFlow()}{balanceFlow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{void}} Script\+::balance\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{string}} $>$ \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Balances the flow in the graph to ensure conservation of flow. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespace_script_a1b5aec1dc75c1fd789ea488e9ec40e22}\label{namespace_script_a1b5aec1dc75c1fd789ea488e9ec40e22} 
+\index{Script@{Script}!calculateMaxFlowAllCities@{calculateMaxFlowAllCities}}
+\index{calculateMaxFlowAllCities@{calculateMaxFlowAllCities}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{calculateMaxFlowAllCities()}{calculateMaxFlowAllCities()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{void}} Script\+::calculate\+Max\+Flow\+All\+Cities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures }\end{DoxyParamCaption})}
+
+
+
+Calculates the maximum flow for all cities in the water infrastructure data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespace_script_a1651083bc5071d2739ce4b703dfe7d90}\label{namespace_script_a1651083bc5071d2739ce4b703dfe7d90} 
+\index{Script@{Script}!calculateMaxFlowForCity@{calculateMaxFlowForCity}}
+\index{calculateMaxFlowForCity@{calculateMaxFlowForCity}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{calculateMaxFlowForCity()}{calculateMaxFlowForCity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{double}} Script\+::calculate\+Max\+Flow\+For\+City (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{city\+Code }\end{DoxyParamCaption})}
+
+
+
+Calculates the maximum flow for a specific city in the water infrastructure data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+{\em city\+Code} & Code of the city. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum flow for the specified city. 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_a7a84d674849ddd3c33375f65f18162af}\label{namespace_script_a7a84d674849ddd3c33375f65f18162af} 
+\index{Script@{Script}!checkPipelineImpact@{checkPipelineImpact}}
+\index{checkPipelineImpact@{checkPipelineImpact}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{checkPipelineImpact()}{checkPipelineImpact()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ Script\+::check\+Pipeline\+Impact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{source\+Service,  }\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{target\+Service,  }\item[{\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures }\end{DoxyParamCaption})}
+
+
+
+Checks the impact of a pipeline on the water infrastructure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Service} & Code of the source service. \\
+\hline
+{\em target\+Service} & Code of the target service. \\
+\hline
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_a61415356b3f43f6294c597d7d5e6efd1}\label{namespace_script_a61415356b3f43f6294c597d7d5e6efd1} 
+\index{Script@{Script}!checkReservoirImpact@{checkReservoirImpact}}
+\index{checkReservoirImpact@{checkReservoirImpact}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{checkReservoirImpact()}{checkReservoirImpact()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ Script\+::check\+Reservoir\+Impact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{string}} \&}]{reservoir\+Code,  }\item[{\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures }\end{DoxyParamCaption})}
+
+
+
+Checks the impact of a reservoir on the water infrastructure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reservoir\+Code} & Code of the reservoir. \\
+\hline
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b}\label{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b} 
+\index{Script@{Script}!checkStationImpact@{checkStationImpact}}
+\index{checkStationImpact@{checkStationImpact}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{checkStationImpact()}{checkStationImpact()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{pair}}$<$ \mbox{\hyperlink{class_edge}{double}}, \mbox{\hyperlink{class_edge}{double}} $>$ $>$ Script\+::check\+Station\+Impact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{string}}}]{station\+Code,  }\item[{\mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures }\end{DoxyParamCaption})}
+
+
+
+Checks the impact of a pumping station on the water infrastructure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em station\+Code} & Code of the pumping station. \\
+\hline
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_ae8bc13c4a9e4181f5900860b38f47841}\label{namespace_script_ae8bc13c4a9e4181f5900860b38f47841} 
+\index{Script@{Script}!edmondsKarp@{edmondsKarp}}
+\index{edmondsKarp@{edmondsKarp}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{edmondsKarp()}{edmondsKarp()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{double}} Script\+::edmonds\+Karp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{class_edge}{T}}}]{source,  }\item[{\mbox{\hyperlink{class_edge}{T}}}]{target }\end{DoxyParamCaption})}
+
+
+
+Implements the Edmonds-\/\+Karp algorithm to find the maximum flow in a graph. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em source} & Source vertex of the flow. \\
+\hline
+{\em target} & Target vertex of the flow. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Maximum flow from source to target. @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_a425e475bcd474a320a3a00cef0b34de8}\label{namespace_script_a425e475bcd474a320a3a00cef0b34de8} 
+\index{Script@{Script}!findAugmentingPath@{findAugmentingPath}}
+\index{findAugmentingPath@{findAugmentingPath}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{findAugmentingPath()}{findAugmentingPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{bool}} Script\+::find\+Augmenting\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph}{Graph}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{s,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})}
+
+
+
+Finds an augmenting path in the graph using BFS. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of information stored in the graph. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em s} & Source vertex of the path. \\
+\hline
+{\em t} & Target vertex of the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if an augmenting path is found, false otherwise. @complexity O(V + E),where V is the number of vertices and E is the number of edges in the graph. 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_a0442c9fbf818286443000b3a84af90c3}\label{namespace_script_a0442c9fbf818286443000b3a84af90c3} 
+\index{Script@{Script}!findDeficitCities@{findDeficitCities}}
+\index{findDeficitCities@{findDeficitCities}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{findDeficitCities()}{findDeficitCities()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{map}}$<$ \mbox{\hyperlink{class_edge}{string}}, \mbox{\hyperlink{class_edge}{double}} $>$ Script\+::find\+Deficit\+Cities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{const}} \mbox{\hyperlink{class_edge}{vector}}$<$ \mbox{\hyperlink{class_water_infrastructure}{Water\+Infrastructure}} $>$ \&}]{infrastructures }\end{DoxyParamCaption})}
+
+
+
+Finds cities with water supply deficit in the water infrastructure data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infrastructures} & Vector containing water infrastructure data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map of cities with their corresponding water supply deficits. @complexity O(nlogk),where n is the number of elements in the infrastructures vector, and k is the number of entries in the deficit\+Cities map. 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a}\label{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a} 
+\index{Script@{Script}!findMinResidualAlongPath@{findMinResidualAlongPath}}
+\index{findMinResidualAlongPath@{findMinResidualAlongPath}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{findMinResidualAlongPath()}{findMinResidualAlongPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{double}} Script\+::find\+Min\+Residual\+Along\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{s,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{t }\end{DoxyParamCaption})}
+
+
+
+Finds the minimum residual along an augmenting path. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of information stored in the vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Source vertex of the path. \\
+\hline
+{\em t} & Target vertex of the path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Minimum residual along the path. @complexity O(\+E), where E is the number of edges in the graph. 
+\end{DoxyReturn}
+\Hypertarget{namespace_script_af75b11a073d4367af9043bf00d7198c4}\label{namespace_script_af75b11a073d4367af9043bf00d7198c4} 
+\index{Script@{Script}!testAndVisit@{testAndVisit}}
+\index{testAndVisit@{testAndVisit}!Script@{Script}}
+\doxysubsubsection{\texorpdfstring{testAndVisit()}{testAndVisit()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_edge}{class}} \mbox{\hyperlink{class_edge}{T}} $>$ \\
+\mbox{\hyperlink{class_edge}{void}} Script\+::test\+And\+Visit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{queue}}$<$ \mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*} $>$ \&}]{q,  }\item[{\mbox{\hyperlink{class_edge}{Edge}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{e,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}$<$ \mbox{\hyperlink{class_edge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{class_edge}{double}}}]{residual }\end{DoxyParamCaption})}
+
+
+
+Tests and visits a vertex based on an edge and residual flow. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of information stored in the vertex. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Queue of vertices to visit. \\
+\hline
+{\em e} & \doxylink{class_edge}{Edge} being considered. \\
+\hline
+{\em w} & \doxylink{class_vertex}{Vertex} to visit. \\
+\hline
+{\em residual} & Residual flow along the edge. \\
+\hline
+\end{DoxyParams}
