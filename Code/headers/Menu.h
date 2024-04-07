@@ -5,6 +5,9 @@
 #include "Script.h"
 #include <iomanip>
 
+/**
+ * @brief Represents a user interface of the system.
+ */
 class Menu {
 public:
     /**
