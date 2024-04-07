@@ -60,7 +60,8 @@ Augments the flow along an augmenting path.
 \hline
 {\em t} & Target vertex of the path. \\
 \hline
-{\em f} & Flow to augment along the path. @complexity O(\+E), where E is the number of edges in the graph. \\
+{\em f} & Flow to augment along the path.~\newline
+ @complexity O(k), where k is the number of vertices on the path from vertex \textquotesingle{}s\textquotesingle{} to vertex \textquotesingle{}t\textquotesingle{}. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespace_script_a56752911817f49e25aa567133497ee12}\label{namespace_script_a56752911817f49e25aa567133497ee12} 
@@ -90,7 +91,8 @@ Calculates the maximum flow for all cities in the water infrastructure data.
 
 
 \begin{DoxyParams}{Parameters}
-{\em infrastructures} & Vector containing water infrastructure data. \\
+{\em infrastructures} & Vector containing water infrastructure data.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{namespace_script_a1651083bc5071d2739ce4b703dfe7d90}\label{namespace_script_a1651083bc5071d2739ce4b703dfe7d90} 
@@ -111,7 +113,8 @@ Calculates the maximum flow for a specific city in the water infrastructure data
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Maximum flow for the specified city. 
+Maximum flow for the specified city.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_a7a84d674849ddd3c33375f65f18162af}\label{namespace_script_a7a84d674849ddd3c33375f65f18162af} 
 \index{Script@{Script}!checkPipelineImpact@{checkPipelineImpact}}
@@ -133,7 +136,8 @@ Checks the impact of a pipeline on the water infrastructure.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+Map of affected cities with their corresponding deficit and excess.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_a61415356b3f43f6294c597d7d5e6efd1}\label{namespace_script_a61415356b3f43f6294c597d7d5e6efd1} 
 \index{Script@{Script}!checkReservoirImpact@{checkReservoirImpact}}
@@ -153,7 +157,8 @@ Checks the impact of a reservoir on the water infrastructure.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+Map of affected cities with their corresponding deficit and excess.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b}\label{namespace_script_a5810c2d3e2fba671f6e5c11e17fd824b} 
 \index{Script@{Script}!checkStationImpact@{checkStationImpact}}
@@ -173,7 +178,8 @@ Checks the impact of a pumping station on the water infrastructure.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Map of affected cities with their corresponding deficit and excess. @complexity O(n⋅m). 
+Map of affected cities with their corresponding deficit and excess.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_ae8bc13c4a9e4181f5900860b38f47841}\label{namespace_script_ae8bc13c4a9e4181f5900860b38f47841} 
 \index{Script@{Script}!edmondsKarp@{edmondsKarp}}
@@ -201,7 +207,8 @@ Implements the Edmonds-\/\+Karp algorithm to find the maximum flow in a graph.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Maximum flow from source to target. @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
+Maximum flow from source to target.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_a425e475bcd474a320a3a00cef0b34de8}\label{namespace_script_a425e475bcd474a320a3a00cef0b34de8} 
 \index{Script@{Script}!findAugmentingPath@{findAugmentingPath}}
@@ -229,7 +236,8 @@ Finds an augmenting path in the graph using BFS.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if an augmenting path is found, false otherwise. @complexity O(V + E),where V is the number of vertices and E is the number of edges in the graph. 
+True if an augmenting path is found, false otherwise.~\newline
+ @complexity O(V + E),where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_a0442c9fbf818286443000b3a84af90c3}\label{namespace_script_a0442c9fbf818286443000b3a84af90c3} 
 \index{Script@{Script}!findDeficitCities@{findDeficitCities}}
@@ -247,7 +255,8 @@ Finds cities with water supply deficit in the water infrastructure data.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Map of cities with their corresponding water supply deficits. @complexity O(nlogk),where n is the number of elements in the infrastructures vector, and k is the number of entries in the deficit\+Cities map. 
+Map of cities with their corresponding water supply deficits.~\newline
+ @complexity O(\+V \texorpdfstring{$\ast$}{*} E\texorpdfstring{$^\wedge$}{\string^}2), where V is the number of vertices and E is the number of edges in the graph. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a}\label{namespace_script_aa9b69f67f2a475c29750e55b46d10d9a} 
 \index{Script@{Script}!findMinResidualAlongPath@{findMinResidualAlongPath}}
@@ -273,7 +282,8 @@ Finds the minimum residual along an augmenting path.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Minimum residual along the path. @complexity O(\+E), where E is the number of edges in the graph. 
+Minimum residual along the path.~\newline
+ @complexity O(k), where k is the number of vertices on the path from vertex \textquotesingle{}s\textquotesingle{} to vertex \textquotesingle{}t\textquotesingle{}. 
 \end{DoxyReturn}
 \Hypertarget{namespace_script_af75b11a073d4367af9043bf00d7198c4}\label{namespace_script_af75b11a073d4367af9043bf00d7198c4} 
 \index{Script@{Script}!testAndVisit@{testAndVisit}}
